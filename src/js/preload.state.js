@@ -1,6 +1,8 @@
+import { BG_COLOR } from './constants';
+
 export class PreloadState extends Phaser.State {
   init () {
-    this.game.stage.backgroundColor = 0x9BBC0F;
+    this.game.stage.backgroundColor = BG_COLOR;
   }
 
   preload() {

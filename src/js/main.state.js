@@ -1,5 +1,5 @@
-import { Map } from './map';
-import { Hero } from './hero.sprite';
+import { Map }   from './map';
+import { Hero }  from './hero.sprite';
 import { Enemy } from './enemy.sprite';
 
 const GRAVITY_SPEED = 300;
