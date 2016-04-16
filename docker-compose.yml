@@ -4,5 +4,6 @@ app:
   working_dir: /code
   volumes:
     - .:/code
+    - $HOME/.netrc:/root/.netrc
   ports:
     - 8000:8000
