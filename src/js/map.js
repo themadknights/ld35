@@ -1,3 +1,5 @@
+export const TILE_SIZE = 64;
+
 export class Map extends Phaser.Tilemap {
   constructor(state, levelId) {
     super(state.game, levelId);
