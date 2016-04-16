@@ -9,7 +9,7 @@ var path              = require('path'),
 module.exports = {
   content: __dirname,
 
-  entry: './src/js/entry.js',
+  entry: './src/entry.js',
 
   output: {
     path: path.join(__dirname, 'public'),
@@ -17,7 +17,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js'],
+    extensions: ['', '.js', '.css'],
     alias: {
       'phaser': phaser,
       'pixi': pixi,
@@ -42,7 +42,8 @@ module.exports = {
       { test: /phaser-split\.js$/, loader: 'expose?Phaser' },
       { test: /\.(ttf|png|xml)/, loader: 'file-loader' },
       { test: /p2\.js/, loader: 'expose?p2' },
-      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
+      { test: /\.js$/, loader: 'babel', exclude: /node_modules/ },
+      { test: /\.css$/, loaders: ['style', 'css']},
       { test: /\.json$/, loader: 'json' }
     ]
   },
