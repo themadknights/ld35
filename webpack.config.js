@@ -40,11 +40,10 @@ module.exports = {
     loaders: [
       { test: /pixi\.js/, loader: 'expose?PIXI' },
       { test: /phaser-split\.js$/, loader: 'expose?Phaser' },
-      { test: /\.(ttf|png|xml)/, loader: 'file-loader' },
+      { test: /\.(ttf|png|xml|json)/, loader: 'file-loader' },
       { test: /p2\.js/, loader: 'expose?p2' },
       { test: /\.js$/, loader: 'babel', exclude: /node_modules/ },
-      { test: /\.css$/, loaders: ['style', 'css']},
-      { test: /\.json$/, loader: 'json' }
+      { test: /\.css$/, loaders: ['style', 'css']}
     ]
   },
 
