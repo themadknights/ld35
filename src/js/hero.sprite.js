@@ -14,7 +14,7 @@ export class Hero extends Phaser.Sprite {
     this.game.physics.arcade.enable(this);
     this.body.collideWorldBounds = true;
 
-    this.animations.add("idle", [0, 1], 2, true);
+    this.animations.add("idle", [0, 1], 6, true);
     this.play("idle");
 
     this.leftKey = this.game.input.keyboard.addKey(Phaser.KeyCode.LEFT);
