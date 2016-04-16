@@ -5,11 +5,12 @@ export class Map extends Phaser.Tilemap {
     this.gameState = state;
 
     this.addTilesetImage('tileset');
-    this.setCollisionBetween(1,99);
 
-    this.background = this.createLayer('background');
+    this.setCollisionBetween(1, 3);
+    //this.setCollision(1);
 
     this.platforms = this.createLayer('foreground');
     this.platforms.resizeWorld();
+    //this.platforms.debug = true;
   }
 }

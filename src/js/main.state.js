@@ -18,4 +18,8 @@ export class MainState extends Phaser.State {
   update() {
     this.game.physics.arcade.collide(this.hero, this.map.platforms);
   }
+
+  render() {
+    //this.game.debug.body(this.hero);
+  }
 }

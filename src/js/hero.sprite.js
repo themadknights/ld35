@@ -1,5 +1,5 @@
 const MOVEMENT_MAX_SPEED = 100;
-const JUMP_SPEED = 200;
+const JUMP_SPEED = 300;
 
 export class Hero extends Phaser.Sprite {
   constructor(state, x, y) {
