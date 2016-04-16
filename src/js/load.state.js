@@ -4,6 +4,10 @@ export class LoadState extends Phaser.State {
     this.loadingText.anchor.setTo(0.5);
 
     this.load.spritesheet('hero', require('../images/hero.png'), 32, 32, 2);
+
+    this.load.image('tileset', require('../images/tileset.png'));
+
+    this.load.tilemap('testLevel', require('../json/test_level.json'), null, Phaser.Tilemap.TILED_JSON);
   }
 
   create () {

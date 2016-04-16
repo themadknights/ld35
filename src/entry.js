@@ -5,4 +5,6 @@ require('phaser');
 require('./css/reset');
 require('./css/main');
 
-require('./js/main');
+const { Game } = require('./js/game');
+
+new Game();

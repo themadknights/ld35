@@ -16,5 +16,3 @@ export class Game extends Phaser.Game {
     this.state.start('preload');
   }
 }
-
-new Game();
