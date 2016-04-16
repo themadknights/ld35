@@ -1,0 +1,8 @@
+app:
+  build: .
+  command: npm start
+  working_dir: /code
+  volumes:
+    - .:/code
+  ports:
+    - 8000:8000
