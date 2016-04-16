@@ -2,8 +2,8 @@ import { PreloadState } from './preload.state';
 import { LoadState } from './load.state';
 import { MainState } from './main.state';
 
-const CANVAS_WIDTH = 800;
-const CANVAS_HEIGHT = 600;
+const CANVAS_WIDTH = 640;
+const CANVAS_HEIGHT = 576;
 
 export class Game extends Phaser.Game {
   constructor () {
