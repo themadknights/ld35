@@ -16,20 +16,6 @@
          "name":"npcs",
          "objects":[
                 {
-                 "gid":7,
-                 "height":0,
-                 "name":"woman1",
-                 "properties":
-                    {
-
-                    },
-                 "type":"villager",
-                 "visible":true,
-                 "width":0,
-                 "x":192,
-                 "y":512
-                }, 
-                {
                  "gid":10,
                  "height":0,
                  "name":"man1",
@@ -41,6 +27,20 @@
                  "visible":true,
                  "width":0,
                  "x":384,
+                 "y":512
+                }, 
+                {
+                 "gid":7,
+                 "height":0,
+                 "name":"woman1",
+                 "properties":
+                    {
+
+                    },
+                 "type":"villager",
+                 "visible":true,
+                 "width":0,
+                 "x":192,
                  "y":512
                 }],
          "opacity":1,

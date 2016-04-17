@@ -5,6 +5,8 @@ import { PatrolBehavior }   from './patrol.behavior';
 import { WanderBehavior }   from './wander.behavior';
 import { ChaseBehavior }    from './chase.behavior';
 
+import { Conversation }     from './conversation';
+
 import { TILE_SIZE }        from '../map';
 
 export const WOMAN_FRAME = 0;
@@ -14,7 +16,7 @@ export const BOY_FRAME = 6;
 const MAX_SPEED = 100;
 const CHASE_MAX_SPEED = 300;
 const MIN_DISTANCE_TO_TALK = 100;
-const SECONDS_TALKING = 2;
+const TALKING_COOLDOWN = 5;
 
 export class Villager extends Enemy {
   constructor(state, { x, y, frame, properties }) {
@@ -22,16 +24,17 @@ export class Villager extends Enemy {
     this.frame = frame;
 
     this.animations.add("talk", [frame, frame + 1], 2, true);
+    this.speed = MAX_SPEED;
 
     if (properties.facing === "left") {
-      this.speed = -MAX_SPEED;
+      this.speed *= -1
       this.scale.setTo(-1, 1);
-    } else {
-      this.speed = MAX_SPEED;
     }
 
+    this.body.velocity.x = this.speed;
+
     this.behaviors["dont_fall"] = new DontFallBehavior(this);
-    this.behaviors["patrol"] = new PatrolBehavior(this, TILE_SIZE);
+    this.behaviors["patrol"] = new PatrolBehavior(this, 2 * TILE_SIZE);
     //this.behaviors["wander"] = new WanderBehavior(this);
     this.behaviors["chase"] = new ChaseBehavior(this, CHASE_MAX_SPEED, 200);
 
@@ -43,38 +46,51 @@ export class Villager extends Enemy {
     this.comic.addChild(this.talkingAbout);
     this.comic.visible = false;
     this.addChild(this.comic);
+
+    this.talking = false;
+    this.canTalk = true;
   }
 
   update(dt) {
     super.update(dt);
 
-    if (!this.talking) {
+    if (this.canTalk && !this.talking) {
       this.gameState.enemies.forEach((enemy) => {
         if (enemy !== this && !enemy.talking) {
           let distance = Phaser.Point.distance(this.position, enemy.position);
           if (distance < MIN_DISTANCE_TO_TALK) {
-            this.talk();
-            enemy.talk(SECONDS_TALKING);
+            if (this.isFacingRight() && enemy.isFacingLeft() && this.position.x < enemy.position.x || 
+              this.isFacingLeft() && enemy.isFacingRight() && this.position.x > enemy.position.x) {
+              new Conversation(this, enemy);
+            }
           }
         }
       });
     }
   }
 
-  talk(delay = 0) {
+  startTalking() {
     this.talking = true;
     this.body.velocity.x = 0;
-    this.scheduleNextWord(delay);
   }
 
-  scheduleNextWord(delay) {
+  stopTalking() {
     let timer = this.game.time.create(this.game, true);
-    timer.add(delay * Phaser.Timer.SECOND, () => {
-      this.comic.frame = this.game.rnd.integerInRange(0, 1);
-      this.talkingAbout.frame = this.game.rnd.integerInRange(0, 8);
-      this.comic.visible = !this.comic.visible;
-      this.scheduleNextWord(SECONDS_TALKING);
+
+    this.talking = false;
+    this.canTalk = false;
+    this.comic.visible = false;
+
+    if (this.isFacingRight()) {
+      this.body.velocity.x = -this.speed;
+    } else {
+      this.body.velocity.x = this.speed;
+    }
+
+    timer.add(TALKING_COOLDOWN * Phaser.Timer.SECOND, () => {
+      this.canTalk = true;
     });
+
     timer.start();
   }
 }
