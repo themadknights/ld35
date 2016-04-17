@@ -15,7 +15,9 @@ export class Map extends Phaser.Tilemap {
     this.platforms = this.createLayer('foreground');
     this.platforms.resizeWorld();
     //this.platforms.debug = true;
+  }
 
+  loadEntities() {
     this.loadVillagers();
     this.loadHero();
   }

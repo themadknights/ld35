@@ -10,6 +10,7 @@ export class AudioManager {
   }
 
   playMusic(music) {
+    this.game.sound.stopAll();
     this.music = this.game.add.audio(music, 0.05, true);
     this.music.play();
   }

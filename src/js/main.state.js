@@ -15,15 +15,16 @@ export class MainState extends Phaser.State {
     this.background = this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'village_background');
     this.background.sendToBack();
     this.background.fixedToCamera = true;
+    this.cameraLastPositionX = this.camera.position.x;
 
-    this.enemies = this.game.add.group();
-
-    this.hero = new Hero(this, this.game.world.centerX, this.game.world.centerY);
     this.map = new Map(this, 'testLevel');
+    this.hero = new Hero(this, this.game.world.centerX, this.game.world.centerY);
+    this.enemies = this.game.add.group();
 
     this.audioManager = new AudioManager(this.game);
     this.audioManager.playMusic('music0');
 
+    this.map.loadEntities();
     this.createHUD();
   }
 
@@ -42,6 +43,9 @@ export class MainState extends Phaser.State {
     } else {
       this.soundText.text = 'SOUND: YES';
     }
+
+    this.background.autoScroll((this.cameraLastPositionX - this.camera.position.x) * 20, 0);
+    this.cameraLastPositionX = this.camera.position.x;
   }
 
   render() {

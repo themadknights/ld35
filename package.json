@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rm -rf public && webpack",
     "start": "rm -rf public && webpack-dev-server --hot --inline",
-    "deploy": "webpack --config webpack.config.prod.js && surge public"
+    "deploy": "rm -rf public && webpack --config webpack.config.prod.js && cp config/CNAME public && surge public"
   },
   "repository": {
     "type": "git",
