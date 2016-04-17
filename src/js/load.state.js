@@ -25,6 +25,8 @@ export class LoadState extends Phaser.State {
     this.load.audio('jumpFx', require('../sounds/jump.wav'));
 
     this.load.tilemap('testLevel', require('../json/test_level.json'), null, Phaser.Tilemap.TILED_JSON);
+
+    this.game.sound.mute = process.env.NODE_ENV === 'production' ? false : true;
   }
 
   create () {

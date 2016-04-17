@@ -3,7 +3,6 @@ export class AudioManager {
     this.game = game;
     this.sounds = {};
     this.music = null;
-    this.game.sound.mute = process.env.NODE_ENV === 'production' ? false : true;
 
     this.toggleMuteKey = this.game.input.keyboard.addKey(Phaser.Keyboard.M);
     this.toggleMuteKey.onDown.add(this.toggleMute, this);
