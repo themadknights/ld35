@@ -58,22 +58,28 @@ export class Conversation {
       this.villager1.comic.visible = false;
       this.villager2.comic.visible = false;
 
-      currentTurn.actor.comic.frame = currentTurn.action === 'like' ? 0 : 1;
-      currentTurn.actor.talkingAbout.frame = this.getConversationFrame(currentTurn.about);
-      currentTurn.actor.comic.visible = true;
+      if (currentTurn.actor === this.villager1 && !this.villager2.talking) {
+        this.villager1.stopTalking();
+      } else if (currentTurn.actor === this.villager2 && !this.villager1.talking) {
+        this.villager2.stopTalking();
+      } else {
+        currentTurn.actor.comic.frame = currentTurn.action === 'like' ? 0 : 1;
+        currentTurn.actor.talkingAbout.frame = this.getConversationFrame(currentTurn.about);
+        currentTurn.actor.comic.visible = true;
 
-      timer.add(SECONDS_TALKING * Phaser.Timer.SECOND, () => {
-        let timer = this.game.time.create(this.game, true);
-        currentTurn.actor.comic.visible = false;
+        timer.add(SECONDS_TALKING * Phaser.Timer.SECOND, () => {
+          let timer = this.game.time.create(this.game, true);
+          currentTurn.actor.comic.visible = false;
 
-        timer.add(SECONDS_PAUSE * Phaser.Timer.SECOND, () => {
-          this.scheduleNextTurn();
+          timer.add(SECONDS_PAUSE * Phaser.Timer.SECOND, () => {
+            this.scheduleNextTurn();
+          });
+
+          timer.start();
         });
 
         timer.start();
-      });
-
-      timer.start();
+      }
     } else {
       this.villager1.stopTalking();
       this.villager2.stopTalking();

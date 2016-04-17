@@ -1,5 +1,6 @@
 import { Enemy }            from './enemy.sprite';
 
+import { DontStop }         from './dont_stop.behavior';
 import { DontFallBehavior } from './dont_fall.behavior';
 import { PatrolBehavior }   from './patrol.behavior';
 import { WanderBehavior }   from './wander.behavior';
@@ -14,7 +15,7 @@ export const MAN_FRAME = 3;
 export const BOY_FRAME = 6;
 
 const MAX_SPEED = 100;
-const CHASE_MAX_SPEED = 300;
+const CHASE_MAX_SPEED = 200;
 const MIN_DISTANCE_TO_TALK = 50;
 const MAX_DISTANCE_TO_TALK = 100;
 const TALKING_COOLDOWN = 5;
@@ -26,9 +27,10 @@ export class Villager extends Enemy {
 
     this.animations.add("talk", [frame, frame + 1], 2, true);
     this.speed = MAX_SPEED;
+    this.normalVelocity = this.speed;
 
     if (properties.facing === "left") {
-      this.speed *= -1
+      this.normalVelocity *= -1;
       this.scale.setTo(-1, 1);
     }
 
@@ -44,7 +46,7 @@ export class Villager extends Enemy {
       this.dislikes = [];
     }
 
-    this.body.velocity.x = this.speed;
+    this.behaviors.push(new DontStop(this));
 
     this.behaviors.push(new DontFallBehavior(this));
 
