@@ -30,5 +30,18 @@ export class Villager extends Enemy {
     //this.behaviors["patrol"] = new PatrolBehavior(this, 64);
     this.behaviors["wander"] = new WanderBehavior(this);
     this.behaviors["chase"] = new ChaseBehavior(this, VILLAGER_CHASE_MAX_SPEED, 200);
+
+    this.comic = this.game.add.sprite(this.body.width / 2, -this.body.height / 2, 'comic');
+    this.comic.anchor.setTo(0.5);
+    this.comic.scale.setTo(-1, 1);
+    this.addChild(this.comic);
+
+    this.talkingAbout = this.game.add.sprite(this.body.width / 2, -this.body.height / 2, 'villagers_miniature');
+    this.talkingAbout.anchor.setTo(0.5);
+    this.addChild(this.talkingAbout);
+  }
+
+  update(dt) {
+    super.update(dt);
   }
 }
