@@ -47,10 +47,12 @@ export class Hero extends Phaser.Sprite {
       this.body.velocity.x = 0;
     }
 
-    if (this.body.velocity.x > 0) {
-      this.scale.setTo(1, 1);
-    } else if (this.body.velocity.x < 0) {
-      this.scale.setTo(-1, 1);
+    if (this.transformed !== null) {
+      if (this.body.velocity.x > 0) {
+        this.scale.setTo(1, 1);
+      } else if (this.body.velocity.x < 0) {
+        this.scale.setTo(-1, 1);
+      }
     }
 
     if (this.body.blocked.down && this.jumpKey.isDown) {
