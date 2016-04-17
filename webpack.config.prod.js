@@ -47,6 +47,7 @@ module.exports = {
       { test: /phaser-split\.js$/, loader: 'expose?Phaser' },
       { test: /\.(ttf|png|xml|json|ogg|wav|mp3)/, loader: 'file-loader' },
       { test: /p2\.js/, loader: 'expose?p2' },
+      { test: /\.js$/, loader: 'strip-loader?strip[]=console.log'},
       { test: /\.js$/, loader: 'babel', exclude: /node_modules/ },
       { test: /\.css$/, loaders: ['style', 'css']}
     ]
