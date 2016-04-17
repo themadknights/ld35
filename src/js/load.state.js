@@ -11,7 +11,7 @@ export class LoadState extends Phaser.State {
     this.load.spritesheet('villagers_miniature', require('../images/villagers_miniature.png'), 16, 16, 9);
     this.load.spritesheet('comic', require('../images/comic.png'), 32, 32, 2);
 
-    this.load.image('village_background', require('../images/village_background.png'));
+    this.load.image('village_background', require('../images/forest_background.png'));
     this.load.image('tmkLogo', require('../images/TMKGameboyLogoNoTitle.png'));
     this.load.image('tileset', require('../images/tileset.png'));
 
