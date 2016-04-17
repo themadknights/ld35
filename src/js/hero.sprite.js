@@ -1,5 +1,6 @@
+import { Conversation }                      from './enemies/conversation';
 import { WOMAN_FRAME, MAN_FRAME, BOY_FRAME } from './enemies/villager.sprite';
-import { TILE_SIZE } from './map';
+import { TILE_SIZE }                         from './map';
 
 const MOVEMENT_MAX_SPEED = 100;
 const JUMP_SPEED = 300;
@@ -89,6 +90,7 @@ export class Hero extends Phaser.Sprite {
   }
 
   isSafeTransformedFor(enemy) {
-    return this.transformed === BOY_FRAME;
+    let enemyLikes = enemy.likes.map(Conversation.getConversationFrame);
+    return enemyLikes.indexOf(this.transformed) !== -1;
   }
 }

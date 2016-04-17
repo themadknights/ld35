@@ -64,7 +64,7 @@ export class Conversation {
         this.villager2.stopTalking();
       } else {
         currentTurn.actor.comic.frame = currentTurn.action === 'like' ? 0 : 1;
-        currentTurn.actor.talkingAbout.frame = this.getConversationFrame(currentTurn.about);
+        currentTurn.actor.talkingAbout.frame = Conversation.getConversationFrame(currentTurn.about);
         currentTurn.actor.comic.visible = true;
 
         timer.add(SECONDS_TALKING * Phaser.Timer.SECOND, () => {
@@ -86,7 +86,7 @@ export class Conversation {
     }
   }
 
-  getConversationFrame(about) {
+  static getConversationFrame(about) {
     switch(about) {
       case "woman":
         return WOMAN_FRAME;
