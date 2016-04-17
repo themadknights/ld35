@@ -6,17 +6,23 @@
  <tileset firstgid="7" name="villagers" tilewidth="64" tileheight="64">
   <image source="../images/villagers.png" width="576" height="64"/>
  </tileset>
+ <tileset firstgid="16" name="hero" tilewidth="32" tileheight="32">
+  <image source="../images/hero.png" width="64" height="32"/>
+ </tileset>
  <layer name="foreground" width="20" height="9">
   <data encoding="base64" compression="zlib">
    eJxjYKAdYMSD0QETFOMyYzABJgbs7iXkVlz6BgIQE670cCu+NEIOBgA9rAA2
   </data>
  </layer>
  <objectgroup name="npcs" width="20" height="9">
-  <object type="villager" gid="7" x="64" y="512"/>
-  <object type="villager" gid="10" x="192" y="256"/>
-  <object type="villager" gid="7" x="768" y="256"/>
-  <object type="villager" gid="13" x="1088" y="192"/>
-  <object type="villager" gid="10" x="384" y="64"/>
-  <object gid="13" x="832" y="512"/>
+  <object name="woman1" type="villager" gid="7" x="64" y="512"/>
+  <object name="man1" type="villager" gid="10" x="192" y="256"/>
+  <object name="woman2" type="villager" gid="7" x="768" y="256"/>
+  <object name="child1" type="villager" gid="13" x="1088" y="192"/>
+  <object name="man2" type="villager" gid="10" x="384" y="64"/>
+  <object name="child2" type="villager" gid="13" x="832" y="512"/>
+ </objectgroup>
+ <objectgroup name="logic" width="20" height="9">
+  <object name="hero" type="hero" gid="16" x="0" y="128"/>
  </objectgroup>
 </map>

@@ -18,7 +18,7 @@
                 {
                  "gid":7,
                  "height":0,
-                 "name":"",
+                 "name":"woman1",
                  "properties":
                     {
 
@@ -32,7 +32,7 @@
                 {
                  "gid":10,
                  "height":0,
-                 "name":"",
+                 "name":"man1",
                  "properties":
                     {
 
@@ -46,7 +46,7 @@
                 {
                  "gid":7,
                  "height":0,
-                 "name":"",
+                 "name":"woman2",
                  "properties":
                     {
 
@@ -60,7 +60,7 @@
                 {
                  "gid":13,
                  "height":0,
-                 "name":"",
+                 "name":"child1",
                  "properties":
                     {
 
@@ -74,7 +74,7 @@
                 {
                  "gid":10,
                  "height":0,
-                 "name":"",
+                 "name":"man2",
                  "properties":
                     {
 
@@ -88,7 +88,7 @@
                 {
                  "gid":13,
                  "height":0,
-                 "name":"",
+                 "name":"child2",
                  "properties":
                     {
 
@@ -98,6 +98,31 @@
                  "width":0,
                  "x":832,
                  "y":512
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "width":20,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "height":9,
+         "name":"logic",
+         "objects":[
+                {
+                 "gid":16,
+                 "height":0,
+                 "name":"hero",
+                 "properties":
+                    {
+
+                    },
+                 "type":"hero",
+                 "visible":true,
+                 "width":0,
+                 "x":0,
+                 "y":128
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -142,6 +167,21 @@
          "spacing":0,
          "tileheight":64,
          "tilewidth":64
+        }, 
+        {
+         "firstgid":16,
+         "image":"..\/images\/hero.png",
+         "imageheight":32,
+         "imagewidth":64,
+         "margin":0,
+         "name":"hero",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tileheight":32,
+         "tilewidth":32
         }],
  "tilewidth":64,
  "version":1,

@@ -14,8 +14,8 @@ export class MainState extends Phaser.State {
 
     this.enemies = this.game.add.group();
 
-    this.map = new Map(this, 'testLevel');
     this.hero = new Hero(this, this.game.world.centerX, this.game.world.centerY);
+    this.map = new Map(this, 'testLevel');
   }
 
   update() {
