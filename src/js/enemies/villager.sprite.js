@@ -15,7 +15,8 @@ export const BOY_FRAME = 6;
 
 const MAX_SPEED = 100;
 const CHASE_MAX_SPEED = 300;
-const MIN_DISTANCE_TO_TALK = 100;
+const MIN_DISTANCE_TO_TALK = 50;
+const MAX_DISTANCE_TO_TALK = 100;
 const TALKING_COOLDOWN = 5;
 
 export class Villager extends Enemy {
@@ -47,7 +48,6 @@ export class Villager extends Enemy {
 
     this.behaviors["dont_fall"] = new DontFallBehavior(this);
 
-    console.log(properties.behavior);
     if (properties.behavior === "wander") {
       this.behaviors["wander"] = new WanderBehavior(this);
     } else {
@@ -75,7 +75,7 @@ export class Villager extends Enemy {
       this.gameState.enemies.forEach((enemy) => {
         if (enemy !== this && !enemy.talking) {
           let distance = Phaser.Point.distance(this.position, enemy.position);
-          if (distance < MIN_DISTANCE_TO_TALK) {
+          if (distance < MAX_DISTANCE_TO_TALK && distance > MIN_DISTANCE_TO_TALK) {
             if (this.isFacingRight() && enemy.isFacingLeft() && this.position.x < enemy.position.x || 
               this.isFacingLeft() && enemy.isFacingRight() && this.position.x > enemy.position.x) {
               new Conversation(this, enemy);
