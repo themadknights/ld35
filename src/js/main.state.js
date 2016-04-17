@@ -11,6 +11,7 @@ export class MainState extends Phaser.State {
 
   create() {
     this.physics.arcade.gravity.y = GRAVITY_SPEED;
+
     //Creating background
     this.background = this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'village_background');
     this.background.sendToBack();
@@ -39,9 +40,9 @@ export class MainState extends Phaser.State {
     });
 
     if (this.audioManager.isMuted()) {
-      this.soundText.text = 'SOUND: NO';
+      this.soundIcon.frame = 1;
     } else {
-      this.soundText.text = 'SOUND: YES';
+      this.soundIcon.frame = 0;
     }
 
     this.background.autoScroll((this.cameraLastPositionX - this.camera.position.x) * 20, 0);
@@ -60,13 +61,8 @@ export class MainState extends Phaser.State {
     this.hud = this.game.add.group();
     this.hud.fixedToCamera = true;
 
-    this.soundText = this.game.add.bitmapText(this.game.width - 10, 10, 'gameBoy', '', 12);
-    this.soundText.anchor.setTo(1, 0);
-    this.hud.add(this.soundText);
-
-    this.hud.add(this.game.add.bitmapText(10, 10, 'gameBoy', 'Transformations:', 12));
-    this.hud.add(this.game.add.bitmapText(10, 30, 'gameBoy', 'ONE: Woman', 12));
-    this.hud.add(this.game.add.bitmapText(10, 50, 'gameBoy', 'TWO: Man', 12));
-    this.hud.add(this.game.add.bitmapText(10, 70, 'gameBoy', 'THREE: Boy', 12));
+    this.soundIcon = this.game.add.sprite(this.game.width - 10, 10, 'soundIcon');
+    this.soundIcon.anchor.setTo(1, 0);
+    this.hud.add(this.soundIcon);
   }
 }
