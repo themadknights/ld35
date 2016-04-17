@@ -10,6 +10,101 @@
          "width":20,
          "x":0,
          "y":0
+        }, 
+        {
+         "height":9,
+         "name":"npcs",
+         "objects":[
+                {
+                 "gid":7,
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"villager",
+                 "visible":true,
+                 "width":0,
+                 "x":64,
+                 "y":512
+                }, 
+                {
+                 "gid":10,
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"villager",
+                 "visible":true,
+                 "width":0,
+                 "x":192,
+                 "y":256
+                }, 
+                {
+                 "gid":7,
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"villager",
+                 "visible":true,
+                 "width":0,
+                 "x":768,
+                 "y":256
+                }, 
+                {
+                 "gid":13,
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"villager",
+                 "visible":true,
+                 "width":0,
+                 "x":1088,
+                 "y":192
+                }, 
+                {
+                 "gid":10,
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"villager",
+                 "visible":true,
+                 "width":0,
+                 "x":384,
+                 "y":64
+                }, 
+                {
+                 "gid":13,
+                 "height":0,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "type":"villager",
+                 "visible":true,
+                 "width":0,
+                 "x":832,
+                 "y":512
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "width":20,
+         "x":0,
+         "y":0
         }],
  "orientation":"orthogonal",
  "properties":
@@ -21,10 +116,25 @@
         {
          "firstgid":1,
          "image":"..\/images\/tileset.png",
-         "imageheight":64,
-         "imagewidth":192,
+         "imageheight":192,
+         "imagewidth":128,
          "margin":0,
          "name":"tileset",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tileheight":64,
+         "tilewidth":64
+        }, 
+        {
+         "firstgid":7,
+         "image":"..\/images\/villagers.png",
+         "imageheight":64,
+         "imagewidth":576,
+         "margin":0,
+         "name":"villagers",
          "properties":
             {
 

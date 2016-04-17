@@ -12,11 +12,10 @@ export class MainState extends Phaser.State {
   create() {
     this.physics.arcade.gravity.y = GRAVITY_SPEED;
 
+    this.enemies = this.game.add.group();
+
     this.map = new Map(this, 'testLevel');
     this.hero = new Hero(this, this.game.world.centerX, this.game.world.centerY);
-
-    this.enemies = this.game.add.group();
-    this.enemies.add(new Enemy(this, 400, 400));
   }
 
   update() {

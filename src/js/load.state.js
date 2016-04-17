@@ -7,7 +7,7 @@ export class LoadState extends Phaser.State {
     this.loadingText.anchor.setTo(0.5);
 
     this.load.spritesheet('hero', require('../images/hero.png'), 32, 32, 2);
-    this.load.spritesheet('villagers', require('../images/villagers.png'), 64, 64, 3);
+    this.load.spritesheet('villagers', require('../images/villagers.png'), 64, 64, 9);
 
     this.load.image('tmkLogo', require('../images/TMKGameboyLogo.png'));
     this.load.image('tileset', require('../images/tileset.png'));
