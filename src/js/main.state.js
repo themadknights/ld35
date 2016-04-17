@@ -1,6 +1,7 @@
-import { Map }   from './map';
-import { Hero }  from './hero.sprite';
-import { Enemy } from './enemy.sprite';
+import { Map }          from './map';
+import { Hero }         from './hero.sprite';
+import { Enemy }        from './enemy.sprite';
+import { AudioManager } from './audio.manager';
 
 const GRAVITY_SPEED = 300;
 
@@ -16,6 +17,9 @@ export class MainState extends Phaser.State {
 
     this.hero = new Hero(this, this.game.world.centerX, this.game.world.centerY);
     this.map = new Map(this, 'testLevel');
+
+    this.audioManager = new AudioManager(this.game);
+    this.audioManager.playMusic('music0');
   }
 
   update() {

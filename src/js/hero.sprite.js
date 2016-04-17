@@ -19,7 +19,7 @@ export class Hero extends Phaser.Sprite {
 
     this.leftKey = this.game.input.keyboard.addKey(Phaser.KeyCode.LEFT);
     this.rightKey = this.game.input.keyboard.addKey(Phaser.KeyCode.RIGHT);
-    this.spaceKey = this.game.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
+    this.jumpKey = this.game.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
   }
 
   update() {
@@ -31,7 +31,8 @@ export class Hero extends Phaser.Sprite {
       this.body.velocity.x = 0;
     }
 
-    if (this.body.blocked.down && this.spaceKey.isDown) {
+    if (this.body.blocked.down && this.jumpKey.isDown) {
+      this.gameState.audioManager.playFx('jumpFx');
       this.body.velocity.y = -JUMP_SPEED;
     }
   }
