@@ -21,6 +21,7 @@
                  "name":"man1",
                  "properties":
                     {
+                     "behavior":"wander",
                      "dislike":"boy",
                      "facing":"left",
                      "like":"man,woman"
@@ -45,6 +46,78 @@
                  "width":0,
                  "x":192,
                  "y":512
+                }, 
+                {
+                 "gid":13,
+                 "height":0,
+                 "name":"boy1",
+                 "properties":
+                    {
+                     "behavior":"wander",
+                     "dislike":"man,woman",
+                     "like":"boy"
+                    },
+                 "type":"villager",
+                 "visible":true,
+                 "width":0,
+                 "x":768,
+                 "y":512
+                }, 
+                {
+                 "gid":7,
+                 "height":0,
+                 "name":"woman2",
+                 "properties":
+                    {
+                     "like":"man"
+                    },
+                 "type":"villager",
+                 "visible":true,
+                 "width":0,
+                 "x":960,
+                 "y":512
+                }, 
+                {
+                 "gid":10,
+                 "height":0,
+                 "name":"man2",
+                 "properties":
+                    {
+
+                    },
+                 "type":"villager",
+                 "visible":true,
+                 "width":0,
+                 "x":384,
+                 "y":64
+                }, 
+                {
+                 "gid":7,
+                 "height":0,
+                 "name":"woman3",
+                 "properties":
+                    {
+
+                    },
+                 "type":"villager",
+                 "visible":true,
+                 "width":0,
+                 "x":768,
+                 "y":256
+                }, 
+                {
+                 "gid":13,
+                 "height":0,
+                 "name":"boy2",
+                 "properties":
+                    {
+
+                    },
+                 "type":"villager",
+                 "visible":true,
+                 "width":0,
+                 "x":1152,
+                 "y":192
                 }],
          "opacity":1,
          "type":"objectgroup",
