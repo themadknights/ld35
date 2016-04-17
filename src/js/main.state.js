@@ -15,6 +15,7 @@ export class MainState extends Phaser.State {
     this.background = this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'village_background');
     this.background.sendToBack();
     this.background.fixedToCamera = true;
+    this.cameraLastPositionX = this.camera.position.x;
 
     this.enemies = this.game.add.group();
 
@@ -42,6 +43,9 @@ export class MainState extends Phaser.State {
     } else {
       this.soundText.text = 'SOUND: YES';
     }
+
+    this.background.autoScroll((this.cameraLastPositionX - this.camera.position.x) * 20, 0);
+    this.cameraLastPositionX = this.camera.position.x;
   }
 
   render() {
