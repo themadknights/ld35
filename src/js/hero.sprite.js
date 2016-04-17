@@ -85,7 +85,6 @@ export class Hero extends Phaser.Sprite {
   }
 
   isSafeTransformedFor(enemy) {
-    return true;
     return this.transformed === BOY_FRAME;
   }
 }
