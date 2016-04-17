@@ -1,5 +1,8 @@
 import { WanderBehavior } from './wander.behavior';
-import { ChaseBehavior } from './chase.behavior';
+import { ChaseBehavior }  from './chase.behavior';
+import { TILE_SIZE }      from '../map';
+
+const ENEMY_SIGHT_DISTANCE = 200;
 
 export class Enemy extends Phaser.Sprite {
   constructor(state, x, y, spriteId) {
@@ -26,5 +29,40 @@ export class Enemy extends Phaser.Sprite {
     for(let behaviorId in this.behaviors) {
       this.behaviors[behaviorId].update();
     }
+  }
+
+  canSeeHero() {
+    const { hero } = this.gameState;
+    const distanceX = this.position.x - hero.position.x;
+    const absDistanceX = Math.abs(distanceX);
+    const absDistanceY = Math.abs(this.position.y - hero.position.y);
+
+    if (absDistanceY > TILE_SIZE) {
+      return false;
+    }
+
+    if (this.body.velocity.x >= 0 && 
+        this.isFacingRight() &&
+        hero.position.x >= this.body.position.x &&
+        absDistanceX < ENEMY_SIGHT_DISTANCE) {
+        return true;
+    }
+
+    if (this.body.velocity.x <= 0 && 
+        this.isFacingLeft() &&
+        hero.position.x <= this.body.position.x &&
+        absDistanceX < ENEMY_SIGHT_DISTANCE) {
+        return true;
+    }
+
+    return false;
+  }
+
+  isFacingRight() {
+    return this.scale.x === 1;
+  }
+
+  isFacingLeft() {
+    return this.scale.x !== 1;
   }
 }

@@ -4,7 +4,7 @@ export class WanderBehavior {
     this.game = this.user.game;
     this.scheduleNextMove();
 
-    this.user.body.velocity.x = this.user.speed;
+    this.user.body.velocity.x = this.setRandomSpeed();
   }
 
   update() {
@@ -15,16 +15,25 @@ export class WanderBehavior {
 
     timer.add(2 * Phaser.Timer.SECOND, () => {
       let random = this.game.rnd.integerInRange(1, 10);
-      if (random < 5) {
+      if (random <= 3) {
         this.user.body.velocity.x = 0;
-      } else if (random < 8) {
-        this.user.body.velocity.x = -this.user.speed;
       } else {
-        this.user.body.velocity.x = this.user.speed;
+        this.setRandomSpeed();
       }
       this.scheduleNextMove();
     });
 
     timer.start();
+  }
+
+  setRandomSpeed() {
+    if (!this.user.canSeeHero()) {
+      let random = this.game.rnd.integerInRange(1, 10);
+      if (random <= 5) {
+        this.user.body.velocity.x = -this.user.speed;
+      } else {
+        this.user.body.velocity.x = this.user.speed;
+      }
+    }
   }
 }

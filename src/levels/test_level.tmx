@@ -16,6 +16,12 @@
  </layer>
  <objectgroup name="npcs" width="20" height="9">
   <object name="woman1" type="villager" gid="7" x="192" y="512"/>
+  <object name="man1" type="villager" gid="10" x="384" y="512"/>
+  <object name="boy1" type="villager" gid="13" x="768" y="256"/>
+  <object name="woman2" type="villager" gid="7" x="384" y="64"/>
+  <object name="man2" type="villager" gid="11" x="1152" y="192"/>
+  <object name="man3" type="villager" gid="11" x="1088" y="512"/>
+  <object name="boy2" type="villager" gid="13" x="960" y="512"/>
  </objectgroup>
  <objectgroup name="logic" width="20" height="9">
   <object name="hero" type="hero" gid="16" x="384" y="384"/>

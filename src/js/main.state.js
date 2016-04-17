@@ -27,6 +27,12 @@ export class MainState extends Phaser.State {
     this.game.physics.arcade.collide(this.hero, this.map.platforms);
     this.game.physics.arcade.collide(this.enemies, this.map.platforms);
 
+    this.game.physics.arcade.overlap(this.hero, this.enemies, (hero, enemy) => {
+      if (!hero.isSafeTransformedFor(enemy)) {
+        this.restart();
+      }
+    });
+
     if (this.audioManager.isMuted()) {
       this.soundText.text = 'SOUND: NO';
     } else {
@@ -38,9 +44,21 @@ export class MainState extends Phaser.State {
     //this.game.debug.body(this.hero);
   }
 
+  restart() {
+    this.game.state.start('main', true, false);
+  }
+
   createHUD() {
+    this.hud = this.game.add.group();
+    this.hud.fixedToCamera = true;
+
     this.soundText = this.game.add.bitmapText(this.game.width - 10, 10, 'gameBoy', '', 12);
-    this.soundText.fixedToCamera = true;
     this.soundText.anchor.setTo(1, 0);
+    this.hud.add(this.soundText);
+
+    this.hud.add(this.game.add.bitmapText(10, 10, 'gameBoy', 'Transformations:', 12));
+    this.hud.add(this.game.add.bitmapText(10, 30, 'gameBoy', 'ONE: Woman', 12));
+    this.hud.add(this.game.add.bitmapText(10, 50, 'gameBoy', 'TWO: Man', 12));
+    this.hud.add(this.game.add.bitmapText(10, 70, 'gameBoy', 'THREE: Boy', 12));
   }
 }

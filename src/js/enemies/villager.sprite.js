@@ -5,32 +5,30 @@ import { PatrolBehavior }   from './patrol.behavior';
 import { WanderBehavior }   from './wander.behavior';
 import { ChaseBehavior }    from './chase.behavior';
 
+export const WOMAN_FRAME = 0;
+export const MAN_FRAME = 3;
+export const BOY_FRAME = 6;
+
 const VILLAGER_MAX_SPEED = 100;
+const VILLAGER_CHASE_MAX_SPEED = 300;
 
 export class Villager extends Enemy {
-  constructor(state, { x, y, frame }) {
+  constructor(state, { x, y, frame, properties }) {
     super(state, x, y, 'villagers');
     this.frame = frame;
 
-    this.animations.add("idle", [frame, frame + 1], 2, true);
-    this.play("idle");
+    this.animations.add("talk", [frame, frame + 1], 2, true);
 
-    this.speed = VILLAGER_MAX_SPEED;
+    if (properties.facing === "left") {
+      this.speed = -VILLAGER_MAX_SPEED;
+      this.scale.setTo(-1, 1);
+    } else {
+      this.speed = VILLAGER_MAX_SPEED;
+    }
 
     this.behaviors["dont_fall"] = new DontFallBehavior(this);
     //this.behaviors["patrol"] = new PatrolBehavior(this, 64);
     this.behaviors["wander"] = new WanderBehavior(this);
-    this.behaviors["chase"] = new ChaseBehavior(this, 300, 200);
+    this.behaviors["chase"] = new ChaseBehavior(this, VILLAGER_CHASE_MAX_SPEED, 200);
   }
 }
-
-// Debug purposes
-//this.behaviors["wander"] = new WanderBehavior(this, 100, 128);
-//this.currentBehavior = this.behaviors["wander"];
-//this.behaviors["chase"] = new ChaseBehavior(this, 75, 200);
-//this.currentBehavior = this.behaviors["chase"];
-//  velocity.x *= -1;
-//if (blocked.left) {
-//  velocity.x = this.speed;
-//} else if (blocked.right) {
-//}
