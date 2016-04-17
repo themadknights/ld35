@@ -21,6 +21,7 @@ export class MainState extends Phaser.State {
     this.map = new Map(this, 'testLevel');
     this.hero = new Hero(this, this.game.world.centerX, this.game.world.centerY);
     this.enemies = this.game.add.group();
+    this.checkpoints = this.game.add.group();
 
     this.audioManager = new AudioManager(this.game);
     this.audioManager.playMusic('music0');

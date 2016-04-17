@@ -1,6 +1,7 @@
 export const TILE_SIZE = 64;
 
 import { Villager } from './enemies/villager.sprite';
+import { Checkpoint } from './checkpoint.sprite';
 
 export class Map extends Phaser.Tilemap {
   constructor(state, levelId) {
@@ -20,6 +21,7 @@ export class Map extends Phaser.Tilemap {
   loadEntities() {
     this.loadVillagers();
     this.loadHero();
+    this.loadCheckpoints();
   }
 
   loadVillagers() {
@@ -35,6 +37,12 @@ export class Map extends Phaser.Tilemap {
   loadHero() {
     this.forEachObject("logic", "hero", (data) => {
       this.gameState.hero.position.setTo(data.x, data.y);
+    });
+  }
+
+  loadCheckpoints() {
+    this.forEachObject("logic", "checkpoint", (data) => {
+      this.gameState.enemies.add(new Checkpoint(this.gameState, data));
     });
   }
 
