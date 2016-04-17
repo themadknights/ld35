@@ -1,6 +1,5 @@
 import { Map }          from './map';
 import { Hero }         from './hero.sprite';
-import { Enemy }        from './enemy.sprite';
 import { AudioManager } from './audio.manager';
 
 const GRAVITY_SPEED = 300;

@@ -14,18 +14,17 @@ export class Enemy extends Phaser.Sprite {
     this.body.collideWorldBounds = true;
 
     this.behaviors = {};
-    this.currentBehavior = null;
   }
 
   update() {
     if (this.body.velocity.x > 0) {
       this.scale.setTo(1, 1);
-    } else {
+    } else if (this.body.velocity.x < 0) {
       this.scale.setTo(-1, 1);
     }
 
-    if (this.currentBehavior) {
-      this.currentBehavior.update();
+    for(let behaviorId in this.behaviors) {
+      this.behaviors[behaviorId].update();
     }
   }
 }

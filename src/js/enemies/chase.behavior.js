@@ -1,4 +1,4 @@
-import { TILE_SIZE } from './map';
+import { TILE_SIZE } from '../map';
 
 export class ChaseBehavior {
   constructor(user, speed, minDistance) {
@@ -12,12 +12,12 @@ export class ChaseBehavior {
     const { hero } = this.gameState;
     const distanceX = this.user.position.x - hero.position.x;
     const absDistanceX = Math.abs(distanceX);
-    const distanceY = this.user.position.y - hero.position.y;
+    const absDistanceY = Math.abs(this.user.position.y - hero.position.y);
 
-    this.user.body.velocity.x = 0;
-
-    if (distanceY < TILE_SIZE) {
-      if (absDistanceX > (hero.width / 2) && absDistanceX < this.minDistance) {
+    if (absDistanceY < TILE_SIZE) {
+      if (absDistanceX < (hero.width / 2)) {
+        this.user.body.velocity.x = 0;
+      } else if (absDistanceX < this.minDistance) {
         this.user.body.velocity.x = distanceX < 0 ? this.speed : -this.speed;
       }
     }

@@ -1,6 +1,6 @@
 export const TILE_SIZE = 64;
 
-import { Villager } from './villager.sprite';
+import { Villager } from './enemies/villager.sprite';
 
 export class Map extends Phaser.Tilemap {
   constructor(state, levelId) {
