@@ -1,5 +1,3 @@
-import { WanderBehavior } from './wander.behavior';
-import { ChaseBehavior }  from './chase.behavior';
 import { TILE_SIZE }      from '../map';
 
 const ENEMY_SIGHT_DISTANCE = 200;
@@ -16,7 +14,7 @@ export class Enemy extends Phaser.Sprite {
     this.game.physics.arcade.enable(this);
     this.body.collideWorldBounds = true;
 
-    this.behaviors = {};
+    this.behaviors = [];
   }
 
   update() {
@@ -26,9 +24,7 @@ export class Enemy extends Phaser.Sprite {
       this.scale.setTo(-1, 1);
     }
 
-    for(let behaviorId in this.behaviors) {
-      this.behaviors[behaviorId].update();
-    }
+    this.behaviors.forEach(behavior => behavior.update());
   }
 
   canSeeHero() {

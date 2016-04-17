@@ -11,11 +11,14 @@ export class ChaseBehavior {
     const absDistanceX = Math.abs(this.user.position.x - hero.position.x);
 
     if (this.user.canSeeHero() && !hero.isSafeTransformedFor(this.user)) {
+      this.user.chasing = true;
       if (hero.position.x < this.user.position.x) {
         this.user.body.velocity.x = -this.speed;
       } else {
         this.user.body.velocity.x = this.speed;
       }
+    } else {
+      this.user.chasing = false;
     }
   }
 }

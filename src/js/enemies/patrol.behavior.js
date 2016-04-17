@@ -10,7 +10,7 @@ export class PatrolBehavior {
   update() {
     const { velocity, position } = this.user.body;
 
-    if (!this.user.talking) {
+    if (!this.user.talking && !this.user.chasing) {
       if (position.x <= this.initialPosition.x - this.maxDistance ||
         position.x >= this.initialPosition.x + this.maxDistance) { 
         this.user.body.velocity.x *= -1;
