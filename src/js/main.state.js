@@ -13,7 +13,7 @@ export class MainState extends Phaser.State {
     this.physics.arcade.gravity.y = GRAVITY_SPEED;
 
     //Creating background
-    this.background = this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'village_background');
+    this.background = this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'dungeon_background');
     this.background.sendToBack();
     this.background.fixedToCamera = true;
     this.cameraLastPositionX = this.camera.position.x;
