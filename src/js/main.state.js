@@ -96,5 +96,10 @@ export class MainState extends Phaser.State {
       this.healthIcons.push(healthIcon);
       this.hud.add(healthIcon);
     }
+
+    this.transformationBar = this.game.add.sprite(40, this.game.height / 2, 'transformationHud');
+    this.transformationBar.anchor.setTo(0.5);
+    this.transformationBar.alpha = 0.9;
+    this.hud.add(this.transformationBar);
   }
 }
