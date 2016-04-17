@@ -36,13 +36,15 @@ export class Map extends Phaser.Tilemap {
 
   loadHero() {
     this.forEachObject("logic", "hero", (data) => {
+      data.y += TILE_SIZE / 4;
       this.gameState.hero.position.setTo(data.x, data.y);
     });
   }
 
   loadCheckpoints() {
     this.forEachObject("logic", "checkpoint", (data) => {
-      this.gameState.enemies.add(new Checkpoint(this.gameState, data));
+      data.y += TILE_SIZE / 4;
+      this.gameState.checkpoints.add(new Checkpoint(this.gameState, data));
     });
   }
 

@@ -5,8 +5,9 @@ import { AudioManager } from './audio.manager';
 const GRAVITY_SPEED = 300;
 
 export class MainState extends Phaser.State {
-  init() {
+  init(savePosition) {
     this.physics.startSystem(Phaser.Physics.ARCADE);
+    this.savePosition = savePosition;
   }
 
   create() {
@@ -27,12 +28,26 @@ export class MainState extends Phaser.State {
     this.audioManager.playMusic('music0');
 
     this.map.loadEntities();
+
+    if (this.savePosition) {
+      this.hero.position.copyFrom(this.savePosition);
+    }
     this.createHUD();
   }
 
   update() {
     this.game.physics.arcade.collide(this.hero, this.map.platforms);
     this.game.physics.arcade.collide(this.enemies, this.map.platforms);
+    this.game.physics.arcade.collide(this.checkpoints, this.map.platforms);
+
+    this.game.physics.arcade.overlap(this.hero, this.checkpoints, (hero, checkpoint) => {
+      this.checkpoints.forEach(c => {
+        if (c !== checkpoint) {
+          c.deActivate();
+        }
+      });
+      checkpoint.activate();
+    });
 
     this.game.physics.arcade.overlap(this.hero, this.enemies, (hero, enemy) => {
       if (!hero.isSafeTransformedFor(enemy)) {
@@ -63,7 +78,7 @@ export class MainState extends Phaser.State {
   }
 
   restart() {
-    this.game.state.start('main', true, false);
+    this.game.state.start('main', true, false, this.savePosition);
   }
 
   createHUD() {
