@@ -6,7 +6,7 @@ export class PreloadState extends Phaser.State {
   }
 
   preload() {
-    this.game.load.bitmapFont('carrier_command', require('../fonts/carrier_command.png'), require('../fonts/carrier_command.xml'));
+    this.game.load.bitmapFont('gameBoy', require('../fonts/game_boy.png'), require('../fonts/game_boy.xml'));
   }
 
   create () {

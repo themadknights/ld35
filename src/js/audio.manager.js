@@ -25,4 +25,8 @@ export class AudioManager {
   toggleMute() {
     this.game.sound.mute = !this.game.sound.mute;
   }
+
+  isMuted() {
+    return this.game.sound.mute;
+  }
 }
