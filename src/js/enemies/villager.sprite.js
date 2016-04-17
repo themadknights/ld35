@@ -31,6 +31,18 @@ export class Villager extends Enemy {
       this.scale.setTo(-1, 1);
     }
 
+    if (properties.like) {
+      this.likes = properties.like.split(',');
+    } else {
+      this.likes = [];
+    }
+
+    if (properties.dislike) {
+      this.dislikes = properties.dislike.split(',');
+    } else {
+      this.dislikes = [];
+    }
+
     this.body.velocity.x = this.speed;
 
     this.behaviors["dont_fall"] = new DontFallBehavior(this);
@@ -38,7 +50,7 @@ export class Villager extends Enemy {
     //this.behaviors["wander"] = new WanderBehavior(this);
     this.behaviors["chase"] = new ChaseBehavior(this, CHASE_MAX_SPEED, 200);
 
-    this.comic = this.game.add.sprite(this.body.width / 1.25, -this.body.height, 'comic');
+    this.comic = this.game.add.sprite(this.body.width / 1.25, -this.body.height / 1.25, 'comic');
     this.comic.anchor.setTo(0.5);
     this.comic.scale.setTo(-1, 1);
     this.talkingAbout = this.game.add.sprite(0, 0, 'villagers_miniature');

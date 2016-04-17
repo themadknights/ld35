@@ -1,6 +1,20 @@
 import { WOMAN_FRAME, MAN_FRAME, BOY_FRAME } from './villager.sprite';
 
-const SECONDS_TALKING = 3;
+const SECONDS_TALKING = 2;
+const SECONDS_PAUSE = 0.5;
+
+function shuffle(a) {
+  var j, x, i;
+
+  for (i = a.length; i; i -= 1) {
+    j = Math.floor(Math.random() * i);
+    x = a[i - 1];
+    a[i - 1] = a[j];
+    a[j] = x;
+  }
+
+  return a;
+}
 
 export class Conversation {
   constructor(villager1, villager2) {
@@ -12,16 +26,28 @@ export class Conversation {
 
     this.game = this.villager1.game;
 
-    this.turns = [
-      { actor: villager1, action: 'like', about: 'woman'},
-      { actor: villager2, action: 'like', about: 'man'},
-      //{ actor: villager1, action: 'dislike', about: 'boy'},
-      //{ actor: villager2, action: 'disklike', about: 'man'},
-      //{ actor: villager1, action: 'like', about: 'boy'},
-      //{ actor: villager2, action: 'dislike', about: 'woman'}
-    ];
+    this.turns = [];
 
+    this.buildTurns();
     this.scheduleNextTurn();
+  }
+
+  buildTurns() {
+    this.turns = shuffle([
+      ...this.buildVillagerTurns(this.villager1),
+      ...this.buildVillagerTurns(this.villager2)
+    ]);
+  }
+
+  buildVillagerTurns(villager) {
+    return [
+      ...villager.likes.map(like => {
+        return {actor: villager, action: 'like', about: like}
+      }),
+    ...this.villager1.dislikes.map(dislike => {
+      return {actor: villager, action: 'dislike', about: dislike}
+    })
+    ];
   }
 
   scheduleNextTurn() {
@@ -37,7 +63,14 @@ export class Conversation {
       currentTurn.actor.comic.visible = true;
 
       timer.add(SECONDS_TALKING * Phaser.Timer.SECOND, () => {
-        this.scheduleNextTurn();
+        let timer = this.game.time.create(this.game, true);
+        currentTurn.actor.comic.visible = false;
+
+        timer.add(SECONDS_PAUSE * Phaser.Timer.SECOND, () => {
+          this.scheduleNextTurn();
+        });
+
+        timer.start();
       });
 
       timer.start();

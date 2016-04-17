@@ -17,10 +17,17 @@
  <objectgroup name="npcs" width="20" height="9">
   <object name="man1" type="villager" gid="10" x="384" y="512">
    <properties>
+    <property name="dislike" value="boy"/>
     <property name="facing" value="left"/>
+    <property name="like" value="man,woman"/>
    </properties>
   </object>
-  <object name="woman1" type="villager" gid="7" x="192" y="512"/>
+  <object name="woman1" type="villager" gid="7" x="192" y="512">
+   <properties>
+    <property name="dislike" value="man,boy"/>
+    <property name="like" value="woman"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="logic" width="20" height="9">
   <object name="hero" type="hero" gid="16" x="384" y="384"/>

@@ -21,7 +21,9 @@
                  "name":"man1",
                  "properties":
                     {
-                     "facing":"left"
+                     "dislike":"boy",
+                     "facing":"left",
+                     "like":"man,woman"
                     },
                  "type":"villager",
                  "visible":true,
@@ -35,7 +37,8 @@
                  "name":"woman1",
                  "properties":
                     {
-
+                     "dislike":"man,boy",
+                     "like":"woman"
                     },
                  "type":"villager",
                  "visible":true,
