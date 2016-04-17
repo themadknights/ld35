@@ -4,6 +4,7 @@ import { TILE_SIZE } from './map';
 const MOVEMENT_MAX_SPEED = 100;
 const JUMP_SPEED = 300;
 const TRANSFORMATION_TIME = 3;
+const MAX_LIFE = 3;
 
 export class Hero extends Phaser.Sprite {
   constructor(state, x, y) {
@@ -22,6 +23,9 @@ export class Hero extends Phaser.Sprite {
     this.play("idle");
 
     this.transformed = null;
+
+    this.maxLife = MAX_LIFE;
+    this.life = 2;//this.maxLife;
 
     this.leftKey = this.game.input.keyboard.addKey(Phaser.KeyCode.LEFT);
     this.rightKey = this.game.input.keyboard.addKey(Phaser.KeyCode.RIGHT);

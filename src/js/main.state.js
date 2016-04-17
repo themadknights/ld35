@@ -45,6 +45,14 @@ export class MainState extends Phaser.State {
       this.soundIcon.frame = 0;
     }
 
+    for (let i = 0; i < this.healthIcons.length; i += 1) {
+      if (i < this.hero.life) {
+        this.healthIcons[i].frame = 0;
+      } else {
+        this.healthIcons[i].frame = 1;
+      }
+    }
+
     this.background.autoScroll((this.cameraLastPositionX - this.camera.position.x) * 20, 0);
     this.cameraLastPositionX = this.camera.position.x;
   }
@@ -64,5 +72,13 @@ export class MainState extends Phaser.State {
     this.soundIcon = this.game.add.sprite(this.game.width - 10, 10, 'soundIcon');
     this.soundIcon.anchor.setTo(1, 0);
     this.hud.add(this.soundIcon);
+
+    this.healthIcons = [];
+    for(let i = 0; i < this.hero.maxLife; i += 1) {
+      let healthIcon = this.game.add.sprite(10 + i * 32 + i * 5, 10, 'healthIcon');
+
+      this.healthIcons.push(healthIcon);
+      this.hud.add(healthIcon);
+    }
   }
 }

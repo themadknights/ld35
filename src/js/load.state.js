@@ -12,13 +12,13 @@ export class LoadState extends Phaser.State {
     this.load.spritesheet('comic', require('../images/comic.png'), 64, 64, 2);
 
     this.load.spritesheet('soundIcon', require('../images/sound.png'), 32, 32, 2);
-    this.load.spritesheet('heartIcon', require('../images/health_icons.png'), 32, 32, 2);
+    this.load.spritesheet('healthIcon', require('../images/health_icons.png'), 32, 32, 2);
 
     this.load.image('village_background', require('../images/forest_background.png'));
     this.load.image('tmkLogo', require('../images/TMKGameboyLogoNoTitle.png'));
     this.load.image('tileset', require('../images/tileset.png'));
 
-    this.load.audio('music0', require('../sounds/music0.ogg'));
+    this.load.audio('music0', require('../sounds/music_village.ogg'));
     this.load.audio('jumpFx', require('../sounds/jump.wav'));
 
     this.load.tilemap('testLevel', require('../json/test_level.json'), null, Phaser.Tilemap.TILED_JSON);
