@@ -54,6 +54,10 @@ export class HelpBubble extends Phaser.Sprite {
     if (!this.active) {
       const { helpBubbleText, helpBubbleBackground } = this.gameState;
 
+      if (this.textId === 'mechanic') {
+        this.gameState.transformationBar.alpha = 1;
+      }
+
       this.active = true;
 
       if (helpBubbleText.timer) {

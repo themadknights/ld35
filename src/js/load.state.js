@@ -40,7 +40,6 @@ export class LoadState extends Phaser.State {
   create () {
     const stateId = process.env.NODE_ENV === 'production' ? 'publisher' : 'start';
 
-    //this.game.state.start(stateId, true, false);
-    this.game.state.start('instructions', true, false);
+    this.game.state.start(stateId, true, false);
   }
 }
