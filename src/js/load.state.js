@@ -6,7 +6,7 @@ export class LoadState extends Phaser.State {
     this.loadingText.tint = FG_COLOR;
     this.loadingText.anchor.setTo(0.5);
 
-    this.load.spritesheet('hero', require('../images/hero.png'), 32, 32, 2);
+    this.load.spritesheet('hero', require('../images/hero.png'), 32, 32, 6);
     this.load.spritesheet('checkpoint', require('../images/checkpoint.png'), 32, 32, 3);
     this.load.spritesheet('villagers', require('../images/villagers.png'), 64, 64, 15);
     this.load.spritesheet('villagers_miniature', require('../images/villagers_miniature.png'), 32, 32, 9);
@@ -15,6 +15,7 @@ export class LoadState extends Phaser.State {
     this.load.spritesheet('soundIcon', require('../images/sound.png'), 32, 32, 2);
     this.load.spritesheet('healthIcon', require('../images/health_icons.png'), 32, 32, 2);
 
+    this.load.image('home_background', require('../images/home_background.png'));
     this.load.image('village_background', require('../images/village_background.png'));
     this.load.image('forest_background', require('../images/forest_background.png'));
     this.load.image('dungeon_background', require('../images/dungeon_background.png'));
