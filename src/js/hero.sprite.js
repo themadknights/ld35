@@ -5,7 +5,7 @@ import { TILE_SIZE }                         from './map';
 const MOVEMENT_MAX_SPEED = 100;
 const JUMP_SPEED = 300;
 const TRANSFORMATION_TIME = 3;
-const MAX_LIFE = 3;
+const MAX_HEALTH = 3;
 
 export class Hero extends Phaser.Sprite {
   constructor(state, x, y) {
@@ -25,8 +25,8 @@ export class Hero extends Phaser.Sprite {
 
     this.transformed = null;
 
-    this.maxLife = MAX_LIFE;
-    this.life = 2;//this.maxLife;
+    this.maxHealth = MAX_HEALTH;
+    this.health = this.maxHealth;
 
     this.leftKey = this.game.input.keyboard.addKey(Phaser.KeyCode.LEFT);
     this.rightKey = this.game.input.keyboard.addKey(Phaser.KeyCode.RIGHT);
@@ -87,6 +87,25 @@ export class Hero extends Phaser.Sprite {
     this.body.height = TILE_SIZE / 2;
     this.position.y += TILE_SIZE / 4;
     this.transformed = null;
+  }
+
+  damage(amount = 1) {
+    if(!this.invulnerable) {
+        this.invulnerable = true;
+        let timer = this.game.time.create(this.game, true);
+        this.immunityTween = this.game.add.tween(this).to({ alpha: 0 }, 0.1 * Phaser.Timer.SECOND, "Linear", true, 0, -1);
+        this.immunityTween.yoyo(true, 0);
+        this.health -= amount;
+        timer.add(2*Phaser.Timer.SECOND, function() {
+            this.game.tweens.remove(this.immunityTween);
+            this.invulnerable = false;
+            this.alpha = 1;
+            if (this.health <= 0) {
+                this.gameState.restart();
+            }
+        }, this);
+        timer.start();
+    }
   }
 
   isSafeTransformedFor(enemy) {

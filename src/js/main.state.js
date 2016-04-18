@@ -51,7 +51,7 @@ export class MainState extends Phaser.State {
 
     this.game.physics.arcade.overlap(this.hero, this.enemies, (hero, enemy) => {
       if (!hero.isSafeTransformedFor(enemy)) {
-        this.restart();
+        this.hero.damage();
       }
     });
 
@@ -62,7 +62,7 @@ export class MainState extends Phaser.State {
     }
 
     for (let i = 0; i < this.healthIcons.length; i += 1) {
-      if (i < this.hero.life) {
+      if (i < this.hero.health) {
         this.healthIcons[i].frame = 0;
       } else {
         this.healthIcons[i].frame = 1;
@@ -90,7 +90,7 @@ export class MainState extends Phaser.State {
     this.hud.add(this.soundIcon);
 
     this.healthIcons = [];
-    for(let i = 0; i < this.hero.maxLife; i += 1) {
+    for(let i = 0; i < this.hero.maxHealth; i += 1) {
       let healthIcon = this.game.add.sprite(10 + i * 32 + i * 5, 10, 'healthIcon');
 
       this.healthIcons.push(healthIcon);
