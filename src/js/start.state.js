@@ -69,14 +69,6 @@ export class StartState extends Phaser.State {
     this.soundIcon.anchor.setTo(1, 0);
     this.hud.add(this.soundIcon);
 
-    this.healthIcons = [];
-    for(let i = 0; i < this.hero.maxHealth; i += 1) {
-      let healthIcon = this.game.add.sprite(10 + i * 32 + i * 5, 10, 'healthIcon');
-
-      this.healthIcons.push(healthIcon);
-      this.hud.add(healthIcon);
-    }
-
     this.cameraOverlay = this.game.add.image(0, 0, 'cameraOverlay');
     this.cameraOverlay.alpha = 1;
     this.cameraOverlay.fixedToCamera = true;
