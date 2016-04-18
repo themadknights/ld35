@@ -32,7 +32,7 @@ export class LoadState extends Phaser.State {
 
     this.load.tilemap('instructionsLevel', require('../json/instructions_level.json'), null, Phaser.Tilemap.TILED_JSON);
     this.load.tilemap('startLevel', require('../json/start_level.json'), null, Phaser.Tilemap.TILED_JSON);
-    this.load.tilemap('testLevel', require('../json/test_level.json'), null, Phaser.Tilemap.TILED_JSON);
+    this.load.tilemap('world', require('../json/world.json'), null, Phaser.Tilemap.TILED_JSON);
 
     this.game.sound.mute = process.env.NODE_ENV === 'production' ? false : true;
   }

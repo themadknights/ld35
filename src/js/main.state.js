@@ -19,7 +19,7 @@ export class MainState extends Phaser.State {
     this.background.fixedToCamera = true;
     this.cameraLastPositionX = this.camera.position.x;
 
-    this.map = new Map(this, 'testLevel');
+    this.map = new Map(this, 'world');
     this.hero = new Hero(this, this.game.world.centerX, this.game.world.centerY);
     this.enemies = this.game.add.group();
     this.checkpoints = this.game.add.group();
