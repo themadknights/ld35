@@ -77,7 +77,7 @@ export class Hero extends Phaser.Sprite {
   transformInto(texture, frame) {
     if (this.transformed === null) {
       this.loadTexture(texture, frame);
-      this.body.width = TILE_SIZE;
+      this.body.width = TILE_SIZE / 2;
       this.body.height = TILE_SIZE;
       this.position.y -= TILE_SIZE / 4;
       this.transformed = frame;
