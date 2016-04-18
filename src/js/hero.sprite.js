@@ -20,8 +20,9 @@ export class Hero extends Phaser.Sprite {
     this.game.physics.arcade.enable(this);
     this.body.collideWorldBounds = true;
 
-    this.animations.add("idle", [0, 1], 6, true);
-    this.play("idle");
+    this.animations.add("slime", [0, 1], 6, true);
+
+    this.play("slime");
 
     this.transformed = null;
 
@@ -64,6 +65,13 @@ export class Hero extends Phaser.Sprite {
       this.gameState.audioManager.playFx('jumpFx');
       this.body.velocity.y = -JUMP_SPEED;
     }
+
+    if (this.transformed !== null && this.body.velocity.x !== 0) {
+      this.play('walk');
+    } else {
+      this.animations.stop('walk');
+      this.frame = this.transformed;
+    }
   }
 
   transformInto(texture, frame) {
@@ -73,6 +81,9 @@ export class Hero extends Phaser.Sprite {
       this.body.height = TILE_SIZE;
       this.position.y -= TILE_SIZE / 4;
       this.transformed = frame;
+
+      this.animations.add("walk", [frame + 3, frame + 4], 4, true);
+
       this.transformationTimer = this.game.time.create(this.game, true);
       this.transformationTimer.add(TRANSFORMATION_TIME * Phaser.Timer.SECOND, () => {
         this.reverTrasformation();
@@ -89,6 +100,7 @@ export class Hero extends Phaser.Sprite {
       this.body.height = TILE_SIZE / 2;
       this.position.y += TILE_SIZE / 4;
       this.transformed = null;
+      this.play("slime");
     }
   }
 
