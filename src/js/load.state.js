@@ -16,6 +16,7 @@ export class LoadState extends Phaser.State {
     this.load.spritesheet('healthIcon', require('../images/health_icons.png'), 32, 32, 2);
 
     this.load.image('home_background', require('../images/home_background.png'));
+    this.load.image('game_over_background', require('../images/game_over_background.png'));
     this.load.image('village_background', require('../images/village_background.png'));
     this.load.image('forest_background', require('../images/forest_background.png'));
     this.load.image('dungeon_background', require('../images/dungeon_background.png'));

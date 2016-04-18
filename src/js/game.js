@@ -6,6 +6,7 @@ import { LoadState }          from './load.state';
 import { InstructionsState }  from './instructions.state';
 import { StartState }         from './start.state';
 import { MainState }          from './main.state';
+import { GameOverState }      from './game_over.state';
 
 export class Game extends Phaser.Game {
   constructor () {
@@ -17,6 +18,7 @@ export class Game extends Phaser.Game {
     this.state.add('instructions' , new InstructionsState());
     this.state.add('start'        , new StartState());
     this.state.add('main'         , new MainState());
+    this.state.add('game_over'    , new GameOverState());
 
     this.state.start('preload');
   }

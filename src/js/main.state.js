@@ -79,6 +79,8 @@ export class MainState extends Phaser.State {
       this.game.state.start('start', true, false, { x: this.game.width - TILE_SIZE / 2, y: this.game.height - TILE_SIZE * 1.25 });
     } else if (this.hero.position.y > this.game.height) {
       this.hero.die();
+    } else if (this.hero.position.x > this.world.width) {
+      this.game.state.start('game_over', true, false);
     }
   }
 
