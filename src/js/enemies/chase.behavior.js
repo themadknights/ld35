@@ -22,7 +22,8 @@ export class ChaseBehavior {
         this.user.startChasing = true;
         this.user.body.velocity.x = 0;
 
-        this.user.frame += 2;
+        this.user.animations.stop();
+        this.user.frame = this.user.initialFrame + 2;
 
         let tween = this.game.add.tween(this.user).to( { y: "-10" }, 100, "Linear", true, 0, 0);
         tween.yoyo(true);
