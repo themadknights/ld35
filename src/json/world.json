@@ -12,20 +12,17 @@
          "y":0
         }, 
         {
-         "draworder":"topdown",
-         "height":9,
+         "height":0,
          "name":"npcs",
          "objects":[
                 {
                  "gid":7,
                  "height":64,
-                 "id":2,
                  "name":"woman1",
                  "properties":
                     {
                      "like":"woman,man,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -35,14 +32,12 @@
                 {
                  "gid":17,
                  "height":64,
-                 "id":13,
                  "name":"boy1",
                  "properties":
                     {
                      "facing":"left",
                      "like":"boy,man,woman"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -52,13 +47,11 @@
                 {
                  "gid":12,
                  "height":64,
-                 "id":18,
                  "name":"man1",
                  "properties":
                     {
                      "like":"man,woman,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -68,13 +61,11 @@
                 {
                  "gid":12,
                  "height":64,
-                 "id":19,
                  "name":"man2",
                  "properties":
                     {
                      "like":"man,boy,woman"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -84,7 +75,6 @@
                 {
                  "gid":7,
                  "height":64,
-                 "id":21,
                  "name":"woman2",
                  "properties":
                     {
@@ -92,7 +82,6 @@
                      "facing":"left",
                      "like":"man,woman"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -102,14 +91,12 @@
                 {
                  "gid":7,
                  "height":64,
-                 "id":29,
                  "name":"woman3",
                  "properties":
                     {
                      "dislike":"man",
                      "like":"woman,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -119,13 +106,11 @@
                 {
                  "gid":12,
                  "height":64,
-                 "id":31,
                  "name":"man3",
                  "properties":
                     {
                      "like":"woman,man,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -135,7 +120,6 @@
                 {
                  "gid":17,
                  "height":64,
-                 "id":32,
                  "name":"boy2",
                  "properties":
                     {
@@ -143,7 +127,6 @@
                      "facing":"left",
                      "like":"woman,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -153,7 +136,6 @@
                 {
                  "gid":17,
                  "height":64,
-                 "id":34,
                  "name":"boy3",
                  "properties":
                     {
@@ -161,7 +143,6 @@
                      "dislike":"man,boy",
                      "like":"woman"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -171,14 +152,12 @@
                 {
                  "gid":17,
                  "height":64,
-                 "id":37,
                  "name":"boy4",
                  "properties":
                     {
                      "dislike":"woman,man",
                      "like":"boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -188,7 +167,6 @@
                 {
                  "gid":17,
                  "height":64,
-                 "id":38,
                  "name":"boy5",
                  "properties":
                     {
@@ -196,7 +174,6 @@
                      "facing":"left",
                      "like":"boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -206,13 +183,11 @@
                 {
                  "gid":7,
                  "height":64,
-                 "id":42,
                  "name":"woman4",
                  "properties":
                     {
                      "dislike":"man,woman,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -222,13 +197,11 @@
                 {
                  "gid":7,
                  "height":64,
-                 "id":43,
                  "name":"woman5",
                  "properties":
                     {
                      "dislike":"man,woman,man"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -238,14 +211,12 @@
                 {
                  "gid":7,
                  "height":64,
-                 "id":46,
                  "name":"woman6",
                  "properties":
                     {
                      "dislike":"man,woman",
                      "like":"boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -255,14 +226,12 @@
                 {
                  "gid":17,
                  "height":64,
-                 "id":47,
                  "name":"boy6",
                  "properties":
                     {
                      "dislike":"man,boy",
                      "like":"woman"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -272,14 +241,12 @@
                 {
                  "gid":17,
                  "height":64,
-                 "id":48,
                  "name":"boy7",
                  "properties":
                     {
                      "dislike":"woman,boy",
                      "like":"man"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -289,14 +256,12 @@
                 {
                  "gid":12,
                  "height":64,
-                 "id":49,
                  "name":"man4",
                  "properties":
                     {
                      "dislike":"woman,boy",
                      "like":"man"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -306,14 +271,12 @@
                 {
                  "gid":12,
                  "height":64,
-                 "id":52,
                  "name":"man5",
                  "properties":
                     {
                      "dislike":"man,boy",
                      "like":"woman"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -323,13 +286,11 @@
                 {
                  "gid":7,
                  "height":64,
-                 "id":58,
                  "name":"woman7",
                  "properties":
                     {
                      "dislike":"man,woman,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -339,14 +300,12 @@
                 {
                  "gid":7,
                  "height":64,
-                 "id":59,
                  "name":"woman8",
                  "properties":
                     {
                      "dislike":"man,woman",
                      "like":"boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -356,13 +315,11 @@
                 {
                  "gid":12,
                  "height":64,
-                 "id":60,
                  "name":"man6",
                  "properties":
                     {
                      "dislike":"man,woman,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -372,14 +329,12 @@
                 {
                  "gid":17,
                  "height":64,
-                 "id":61,
                  "name":"boy8",
                  "properties":
                     {
                      "dislike":"man,woman",
                      "like":"boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -389,13 +344,11 @@
                 {
                  "gid":17,
                  "height":64,
-                 "id":62,
                  "name":"boy9",
                  "properties":
                     {
                      "dislike":"man,woman,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -405,13 +358,11 @@
                 {
                  "gid":7,
                  "height":64,
-                 "id":63,
                  "name":"woman9",
                  "properties":
                     {
                      "dislike":"man,woman,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -421,14 +372,12 @@
                 {
                  "gid":7,
                  "height":64,
-                 "id":64,
                  "name":"woman10",
                  "properties":
                     {
                      "dislike":"man,boy",
                      "like":"woman"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -438,7 +387,6 @@
                 {
                  "gid":7,
                  "height":64,
-                 "id":65,
                  "name":"woman11",
                  "properties":
                     {
@@ -446,7 +394,6 @@
                      "facing":"left",
                      "like":"woman,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -456,14 +403,12 @@
                 {
                  "gid":12,
                  "height":64,
-                 "id":67,
                  "name":"man6",
                  "properties":
                     {
                      "dislike":"woman,boy",
                      "like":"man"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -473,14 +418,12 @@
                 {
                  "gid":17,
                  "height":64,
-                 "id":69,
                  "name":"boy10",
                  "properties":
                     {
                      "dislike":"man",
                      "like":"boy,woman"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -490,14 +433,12 @@
                 {
                  "gid":17,
                  "height":64,
-                 "id":70,
                  "name":"boy11",
                  "properties":
                     {
                      "dislike":"woman",
                      "like":"man,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -507,14 +448,12 @@
                 {
                  "gid":12,
                  "height":64,
-                 "id":72,
                  "name":"man7",
                  "properties":
                     {
                      "dislike":"woman,man",
                      "like":"boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -524,14 +463,12 @@
                 {
                  "gid":12,
                  "height":64,
-                 "id":74,
                  "name":"man8",
                  "properties":
                     {
                      "behavior":"wander",
                      "dislike":"woman,man,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -541,13 +478,11 @@
                 {
                  "gid":12,
                  "height":64,
-                 "id":76,
                  "name":"man9",
                  "properties":
                     {
                      "like":"man,woman,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -557,13 +492,11 @@
                 {
                  "gid":7,
                  "height":64,
-                 "id":77,
                  "name":"woman12",
                  "properties":
                     {
                      "dislike":"man,woman,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -573,13 +506,11 @@
                 {
                  "gid":17,
                  "height":64,
-                 "id":78,
                  "name":"boy12",
                  "properties":
                     {
                      "like":"man,woman,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -589,14 +520,12 @@
                 {
                  "gid":17,
                  "height":64,
-                 "id":79,
                  "name":"boy13",
                  "properties":
                     {
                      "dislike":"boy",
                      "like":"man,woman"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -606,13 +535,11 @@
                 {
                  "gid":7,
                  "height":64,
-                 "id":80,
                  "name":"woman13",
                  "properties":
                     {
                      "dislike":"woman,man,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -622,13 +549,11 @@
                 {
                  "gid":7,
                  "height":64,
-                 "id":81,
                  "name":"woman14",
                  "properties":
                     {
                      "dislike":"woman,man,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -638,13 +563,11 @@
                 {
                  "gid":7,
                  "height":64,
-                 "id":82,
                  "name":"woman15",
                  "properties":
                     {
                      "like":"man,woman,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -654,14 +577,12 @@
                 {
                  "gid":7,
                  "height":64,
-                 "id":83,
                  "name":"woman16",
                  "properties":
                     {
                      "behavior":"wander",
                      "like":"man,woman,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -671,14 +592,12 @@
                 {
                  "gid":7,
                  "height":64,
-                 "id":84,
                  "name":"woman17",
                  "properties":
                     {
                      "behavior":"wander",
                      "like":"man,woman,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -688,13 +607,11 @@
                 {
                  "gid":7,
                  "height":64,
-                 "id":85,
                  "name":"woman18",
                  "properties":
                     {
                      "like":"man,woman,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -704,13 +621,11 @@
                 {
                  "gid":12,
                  "height":64,
-                 "id":86,
                  "name":"man10",
                  "properties":
                     {
                      "like":"man,woman,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -720,14 +635,12 @@
                 {
                  "gid":12,
                  "height":64,
-                 "id":87,
                  "name":"man11",
                  "properties":
                     {
                      "behavior":"wander",
                      "like":"man,woman,boy"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -737,14 +650,12 @@
                 {
                  "gid":12,
                  "height":64,
-                 "id":88,
                  "name":"man12",
                  "properties":
                     {
                      "behavior":"wander",
                      "like":"man,boy,woman"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -754,13 +665,11 @@
                 {
                  "gid":12,
                  "height":64,
-                 "id":89,
                  "name":"man13",
                  "properties":
                     {
                      "like":"man,boy,woman"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -770,13 +679,11 @@
                 {
                  "gid":17,
                  "height":64,
-                 "id":90,
                  "name":"boy14",
                  "properties":
                     {
                      "like":"man,boy,woman"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -786,14 +693,12 @@
                 {
                  "gid":17,
                  "height":64,
-                 "id":91,
                  "name":"boy15",
                  "properties":
                     {
                      "behavior":"wander",
                      "like":"man,boy,woman"
                     },
-                 "rotation":0,
                  "type":"villager",
                  "visible":true,
                  "width":64,
@@ -803,25 +708,22 @@
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
-         "width":20,
+         "width":0,
          "x":0,
          "y":0
         }, 
         {
-         "draworder":"topdown",
-         "height":9,
+         "height":0,
          "name":"logic",
          "objects":[
                 {
                  "gid":22,
                  "height":32,
-                 "id":8,
                  "name":"hero",
                  "properties":
                     {
 
                     },
-                 "rotation":0,
                  "type":"hero",
                  "visible":true,
                  "width":32,
@@ -831,13 +733,11 @@
                 {
                  "gid":28,
                  "height":32,
-                 "id":9,
                  "name":"",
                  "properties":
                     {
 
                     },
-                 "rotation":0,
                  "type":"checkpoint",
                  "visible":true,
                  "width":32,
@@ -847,13 +747,11 @@
                 {
                  "gid":28,
                  "height":32,
-                 "id":10,
                  "name":"",
                  "properties":
                     {
 
                     },
-                 "rotation":0,
                  "type":"checkpoint",
                  "visible":true,
                  "width":32,
@@ -863,13 +761,11 @@
                 {
                  "gid":28,
                  "height":32,
-                 "id":11,
                  "name":"",
                  "properties":
                     {
 
                     },
-                 "rotation":0,
                  "type":"checkpoint",
                  "visible":true,
                  "width":32,
@@ -879,13 +775,11 @@
                 {
                  "gid":28,
                  "height":32,
-                 "id":26,
                  "name":"",
                  "properties":
                     {
 
                     },
-                 "rotation":0,
                  "type":"checkpoint",
                  "visible":true,
                  "width":32,
@@ -895,13 +789,11 @@
                 {
                  "gid":28,
                  "height":32,
-                 "id":27,
                  "name":"",
                  "properties":
                     {
 
                     },
-                 "rotation":0,
                  "type":"checkpoint",
                  "visible":true,
                  "width":32,
@@ -911,13 +803,11 @@
                 {
                  "gid":28,
                  "height":32,
-                 "id":35,
                  "name":"",
                  "properties":
                     {
 
                     },
-                 "rotation":0,
                  "type":"checkpoint",
                  "visible":true,
                  "width":32,
@@ -927,13 +817,11 @@
                 {
                  "gid":28,
                  "height":32,
-                 "id":54,
                  "name":"",
                  "properties":
                     {
 
                     },
-                 "rotation":0,
                  "type":"checkpoint",
                  "visible":true,
                  "width":32,
@@ -943,13 +831,11 @@
                 {
                  "gid":28,
                  "height":32,
-                 "id":75,
                  "name":"",
                  "properties":
                     {
 
                     },
-                 "rotation":0,
                  "type":"checkpoint",
                  "visible":true,
                  "width":32,
@@ -959,17 +845,82 @@
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
-         "width":20,
+         "width":0,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "height":9,
+         "name":"transitions",
+         "objects":[
+                {
+                 "height":64,
+                 "name":"dungeon <> forest",
+                 "properties":
+                    {
+                     "left":"dungeon",
+                     "right":"forest"
+                    },
+                 "type":"transition",
+                 "visible":true,
+                 "width":64,
+                 "x":2112,
+                 "y":448
+                }, 
+                {
+                 "height":64,
+                 "name":"forest <> village",
+                 "properties":
+                    {
+                     "left":"forest",
+                     "right":"village"
+                    },
+                 "type":"transition",
+                 "visible":true,
+                 "width":64,
+                 "x":6336,
+                 "y":384
+                }, 
+                {
+                 "height":64,
+                 "name":"village<> forest",
+                 "properties":
+                    {
+                     "left":"village",
+                     "right":"forest"
+                    },
+                 "type":"transition",
+                 "visible":true,
+                 "width":64,
+                 "x":11328,
+                 "y":384
+                }, 
+                {
+                 "height":64,
+                 "name":"forest <> dungeon",
+                 "properties":
+                    {
+                     "left":"forest",
+                     "right":"dungeon"
+                    },
+                 "type":"transition",
+                 "visible":true,
+                 "width":64,
+                 "x":13568,
+                 "y":384
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "width":230,
          "x":0,
          "y":0
         }],
- "nextobjectid":92,
  "orientation":"orthogonal",
  "properties":
     {
 
     },
- "renderorder":"right-down",
  "tileheight":64,
  "tilesets":[
         {
@@ -984,7 +935,6 @@
 
             },
          "spacing":0,
-         "tilecount":6,
          "tileheight":64,
          "tilewidth":64
         }, 
@@ -1000,7 +950,6 @@
 
             },
          "spacing":0,
-         "tilecount":15,
          "tileheight":64,
          "tilewidth":64
         }, 
@@ -1016,7 +965,6 @@
 
             },
          "spacing":0,
-         "tilecount":6,
          "tileheight":32,
          "tilewidth":32
         }, 
@@ -1032,7 +980,6 @@
 
             },
          "spacing":0,
-         "tilecount":3,
          "tileheight":32,
          "tilewidth":32
         }],

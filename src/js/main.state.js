@@ -5,17 +5,17 @@ import { AudioManager }   from './audio.manager';
 const GRAVITY_SPEED = 300;
 
 export class MainState extends Phaser.State {
-  init(savePosition) {
+  init(savePosition, currentZoneId) {
     this.physics.startSystem(Phaser.Physics.ARCADE);
     this.savePosition = savePosition;
-    this.currentBackgroundId = 'dungeon_background';
+    this.currentZoneId = currentZoneId || 'dungeon';
   }
 
   create() {
     this.physics.arcade.gravity.y = GRAVITY_SPEED;
 
     //Creating background
-    this.background = this.game.add.tileSprite(0, 0, this.game.width, this.game.height, this.currentBackgroundId);
+    this.background = this.game.add.tileSprite(0, 0, this.game.width, this.game.height, `${this.currentZoneId}_background`);
     this.background.sendToBack();
     this.background.fixedToCamera = true;
     this.cameraLastPositionX = this.camera.position.x;
@@ -27,7 +27,7 @@ export class MainState extends Phaser.State {
     this.transitions = this.game.add.group();
 
     this.audioManager = new AudioManager(this.game);
-    this.audioManager.playMusic('music0');
+    this.audioManager.playMusic(`${this.currentZoneId}_music`);
 
     this.map.loadEntities();
 
@@ -101,7 +101,7 @@ export class MainState extends Phaser.State {
         alpha: 1
     },  Phaser.Timer.HALF, "Linear", true);
     this.cameraOverlayTween.onComplete.add(() => {
-      this.game.state.start('main', true, false, this.savePosition);
+      this.game.state.start('main', true, false, this.savePosition, this.currentZoneId);
     });
     this.cameraOverlayTween.start();
   }
@@ -133,13 +133,15 @@ export class MainState extends Phaser.State {
     this.cameraOverlay.fixedToCamera = true;
   }
 
-  makeBackgroundTransitionTo(backgroundId) {
+  makeBackgroundTransitionTo(zoneId) {
     let tween = this.game.add.tween(this.background).to({
       alpha: 0.2
     }, Phaser.Timer.HALF, "Linear", true);
     tween.start();
     tween.onComplete.add(() => {
-      this.background.loadTexture(backgroundId);
+      this.background.loadTexture(`${zoneId}_background`);
+      this.audioManager.playMusic(`${zoneId}_music`);
+      this.currentZoneId = zoneId;
       this.game.add.tween(this.background).to({
         alpha: 1
       }, Phaser.Timer.HALF, "Linear", true).start();

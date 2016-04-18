@@ -26,7 +26,10 @@ export class LoadState extends Phaser.State {
     this.load.image('cameraOverlay', require('../images/camera_overlay.png'));
     this.load.image('helpBubbleBackground', require('../images/help_bubble_background.png'));
 
-    this.load.audio('music0', require('../sounds/music_village.ogg'));
+    this.load.audio('home_music', require('../sounds/music_home.ogg'));
+    this.load.audio('dungeon_music', require('../sounds/music_dungeon.ogg'));
+    this.load.audio('forest_music', require('../sounds/music_forest.ogg'));
+    this.load.audio('village_music', require('../sounds/music_village.ogg'));
     this.load.audio('jumpFx', require('../sounds/jump.wav'));
     this.load.audio('damageFx', require('../sounds/damage.wav'));
     this.load.audio('deathFx', require('../sounds/death.wav'));

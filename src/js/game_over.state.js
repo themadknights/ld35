@@ -40,7 +40,7 @@ export class GameOverState extends Phaser.State {
     this.heroChild2.anchor.setTo(0.5);
 
     this.audioManager = new AudioManager(this.game);
-    this.audioManager.playMusic('music0');
+    this.audioManager.playMusic('home_music');
 
     this.map.loadEntities();
 
