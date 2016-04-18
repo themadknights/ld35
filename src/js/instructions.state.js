@@ -27,7 +27,7 @@ export class InstructionsState extends Phaser.State {
     this.helpBubbles = this.game.add.group();
 
     this.audioManager = new AudioManager(this.game);
-    this.audioManager.playMusic('music0');
+    this.audioManager.playMusic('village_music');
 
     this.map.loadEntities();
 

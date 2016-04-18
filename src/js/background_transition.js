@@ -25,9 +25,9 @@ export class BackgroundTransition extends Phaser.Sprite {
     } else {
       if (this.active) {
         if (this.gameState.hero.position.x > this.position.x) {
-          this.gameState.makeBackgroundTransitionTo(`${this.rightTransition}_background`);
+          this.gameState.makeBackgroundTransitionTo(this.rightTransition);
         } else {
-          this.gameState.makeBackgroundTransitionTo(`${this.leftTransition}_background`);
+          this.gameState.makeBackgroundTransitionTo(this.leftTransition);
         }
         this.active = false;
       }

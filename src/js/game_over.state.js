@@ -6,7 +6,7 @@ import { FG_COLOR }     from './constants';
 
 const GRAVITY_SPEED = 300;
 
-export class StartState extends Phaser.State {
+export class GameOverState extends Phaser.State {
   init(savePosition) {
     this.physics.startSystem(Phaser.Physics.ARCADE);
     this.savePosition = savePosition;
@@ -16,7 +16,7 @@ export class StartState extends Phaser.State {
     this.physics.arcade.gravity.y = GRAVITY_SPEED;
 
     //Creating background
-    this.background = this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'home_background');
+    this.background = this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'game_over_background');
     this.background.sendToBack();
     this.background.fixedToCamera = true;
     this.cameraLastPositionX = this.camera.position.x;
@@ -49,6 +49,7 @@ export class StartState extends Phaser.State {
     }
     this.createHUD();
     this.start();
+    this.hero.body.collideWorldBounds = true;
   }
 
   update() {
@@ -58,12 +59,6 @@ export class StartState extends Phaser.State {
       this.soundIcon.frame = 1;
     } else {
       this.soundIcon.frame = 0;
-    }
-
-    if (this.hero.position.x < 0) {
-      this.game.state.start('instructions', true, false);
-    } else if (this.hero.position.x > this.world.width) {
-      this.game.state.start('main', true, false);
     }
   }
 
@@ -86,23 +81,13 @@ export class StartState extends Phaser.State {
     this.soundIcon.anchor.setTo(1, 0);
     this.hud.add(this.soundIcon);
 
-    this.gameTitleText = this.game.add.bitmapText(25, 250, 'gameBoy', "Family\nSlime", 36);
-    this.gameTitleText.anchor.setTo(0, 1);
-    this.hud.add(this.gameTitleText);
+    this.thanksText = this.game.add.bitmapText(this.game.width / 2, 100, 'gameBoy', "Thanks for playing!", 30);
+    this.thanksText.anchor.setTo(0.5);
+    this.hud.add(this.thanksText);
 
-    this.createdByText = this.game.add.bitmapText(this.game.width - 25, 190, 'gameBoy', "Created by", 20);
-    this.createdByText.anchor.setTo(1, 1);
-    this.hud.add(this.createdByText);
-
-    this.authorsText = this.game.add.bitmapText(this.game.width - 25, 245, 'gameBoy', "ReikVal\nbeagleknight", 16);
-    this.authorsText.anchor.setTo(1, 1);
-    this.hud.add(this.authorsText);
-
-    this.trainingText = this.game.add.bitmapText(18, 435, 'gameBoy', "Training", 10);
-    this.hud.add(this.trainingText);
-
-    this.playText = this.game.add.bitmapText(this.game.width - 80, 435, 'gameBoy', "Play", 12);
-    this.hud.add(this.playText);
+    this.awesomeText = this.game.add.bitmapText(this.game.width / 2, 350, 'gameBoy', "You are awesome!", 30);
+    this.awesomeText.anchor.setTo(0.5);
+    this.hud.add(this.awesomeText);
 
     this.cameraOverlay = this.game.add.image(0, 0, 'cameraOverlay');
     this.cameraOverlay.alpha = 1;

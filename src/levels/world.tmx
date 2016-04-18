@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="230" height="9" tilewidth="64" tileheight="64" nextobjectid="92">
- <tileset firstgid="1" name="tileset" tilewidth="64" tileheight="64" tilecount="6">
+<map version="1.0" orientation="orthogonal" width="230" height="9" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="tileset" tilewidth="64" tileheight="64">
   <image source="../images/tileset.png" width="128" height="192"/>
  </tileset>
- <tileset firstgid="7" name="villagers" tilewidth="64" tileheight="64" tilecount="15">
+ <tileset firstgid="7" name="villagers" tilewidth="64" tileheight="64">
   <image source="../images/villagers.png" width="960" height="64"/>
  </tileset>
- <tileset firstgid="22" name="hero" tilewidth="32" tileheight="32" tilecount="6">
+ <tileset firstgid="22" name="hero" tilewidth="32" tileheight="32">
   <image source="../images/hero.png" width="192" height="32"/>
  </tileset>
- <tileset firstgid="28" name="checkpoint" tilewidth="32" tileheight="32" tilecount="3">
+ <tileset firstgid="28" name="checkpoint" tilewidth="32" tileheight="32">
   <image source="../images/checkpoint.png" width="96" height="32"/>
  </tileset>
  <layer name="foreground" width="230" height="9">
@@ -2086,284 +2086,310 @@
    <tile gid="1"/>
   </data>
  </layer>
- <objectgroup name="npcs">
-  <object id="2" name="woman1" type="villager" gid="7" x="2496" y="384" width="64" height="64">
+ <objectgroup name="npcs" width="0" height="0">
+  <object name="woman1" type="villager" gid="7" x="2496" y="384" width="64" height="64">
    <properties>
     <property name="like" value="woman,man,boy"/>
    </properties>
   </object>
-  <object id="13" name="boy1" type="villager" gid="17" x="2752" y="384" width="64" height="64">
+  <object name="boy1" type="villager" gid="17" x="2752" y="384" width="64" height="64">
    <properties>
     <property name="facing" value="left"/>
     <property name="like" value="boy,man,woman"/>
    </properties>
   </object>
-  <object id="18" name="man1" type="villager" gid="12" x="2944" y="512" width="64" height="64">
+  <object name="man1" type="villager" gid="12" x="2944" y="512" width="64" height="64">
    <properties>
     <property name="like" value="man,woman,boy"/>
    </properties>
   </object>
-  <object id="19" name="man2" type="villager" gid="12" x="3776" y="512" width="64" height="64">
+  <object name="man2" type="villager" gid="12" x="3776" y="512" width="64" height="64">
    <properties>
     <property name="like" value="man,boy,woman"/>
    </properties>
   </object>
-  <object id="21" name="woman2" type="villager" gid="7" x="3968" y="512" width="64" height="64">
+  <object name="woman2" type="villager" gid="7" x="3968" y="512" width="64" height="64">
    <properties>
     <property name="dislike" value="boy"/>
     <property name="facing" value="left"/>
     <property name="like" value="man,woman"/>
    </properties>
   </object>
-  <object id="29" name="woman3" type="villager" gid="7" x="4672" y="512" width="64" height="64">
+  <object name="woman3" type="villager" gid="7" x="4672" y="512" width="64" height="64">
    <properties>
     <property name="dislike" value="man"/>
     <property name="like" value="woman,boy"/>
    </properties>
   </object>
-  <object id="31" name="man3" type="villager" gid="12" x="4864" y="512" width="64" height="64">
+  <object name="man3" type="villager" gid="12" x="4864" y="512" width="64" height="64">
    <properties>
     <property name="like" value="woman,man,boy"/>
    </properties>
   </object>
-  <object id="32" name="boy2" type="villager" gid="17" x="4992" y="512" width="64" height="64">
+  <object name="boy2" type="villager" gid="17" x="4992" y="512" width="64" height="64">
    <properties>
     <property name="dislike" value="man"/>
     <property name="facing" value="left"/>
     <property name="like" value="woman,boy"/>
    </properties>
   </object>
-  <object id="34" name="boy3" type="villager" gid="17" x="5440" y="512" width="64" height="64">
+  <object name="boy3" type="villager" gid="17" x="5440" y="512" width="64" height="64">
    <properties>
     <property name="behavior" value="wander"/>
     <property name="dislike" value="man,boy"/>
     <property name="like" value="woman"/>
    </properties>
   </object>
-  <object id="37" name="boy4" type="villager" gid="17" x="6592" y="512" width="64" height="64">
+  <object name="boy4" type="villager" gid="17" x="6592" y="512" width="64" height="64">
    <properties>
     <property name="dislike" value="woman,man"/>
     <property name="like" value="boy"/>
    </properties>
   </object>
-  <object id="38" name="boy5" type="villager" gid="17" x="6656" y="512" width="64" height="64">
+  <object name="boy5" type="villager" gid="17" x="6656" y="512" width="64" height="64">
    <properties>
     <property name="dislike" value="woman,man"/>
     <property name="facing" value="left"/>
     <property name="like" value="boy"/>
    </properties>
   </object>
-  <object id="42" name="woman4" type="villager" gid="7" x="7360" y="512" width="64" height="64">
+  <object name="woman4" type="villager" gid="7" x="7360" y="512" width="64" height="64">
    <properties>
     <property name="dislike" value="man,woman,boy"/>
    </properties>
   </object>
-  <object id="43" name="woman5" type="villager" gid="7" x="7424" y="512" width="64" height="64">
+  <object name="woman5" type="villager" gid="7" x="7424" y="512" width="64" height="64">
    <properties>
     <property name="dislike" value="man,woman,man"/>
    </properties>
   </object>
-  <object id="46" name="woman6" type="villager" gid="7" x="7488" y="256" width="64" height="64">
+  <object name="woman6" type="villager" gid="7" x="7488" y="256" width="64" height="64">
    <properties>
     <property name="dislike" value="man,woman"/>
     <property name="like" value="boy"/>
    </properties>
   </object>
-  <object id="47" name="boy6" type="villager" gid="17" x="7552" y="256" width="64" height="64">
+  <object name="boy6" type="villager" gid="17" x="7552" y="256" width="64" height="64">
    <properties>
     <property name="dislike" value="man,boy"/>
     <property name="like" value="woman"/>
    </properties>
   </object>
-  <object id="48" name="boy7" type="villager" gid="17" x="7488" y="128" width="64" height="64">
+  <object name="boy7" type="villager" gid="17" x="7488" y="128" width="64" height="64">
    <properties>
     <property name="dislike" value="woman,boy"/>
     <property name="like" value="man"/>
    </properties>
   </object>
-  <object id="49" name="man4" type="villager" gid="12" x="7552" y="128" width="64" height="64">
+  <object name="man4" type="villager" gid="12" x="7552" y="128" width="64" height="64">
    <properties>
     <property name="dislike" value="woman,boy"/>
     <property name="like" value="man"/>
    </properties>
   </object>
-  <object id="52" name="man5" type="villager" gid="12" x="8000" y="384" width="64" height="64">
+  <object name="man5" type="villager" gid="12" x="8000" y="384" width="64" height="64">
    <properties>
     <property name="dislike" value="man,boy"/>
     <property name="like" value="woman"/>
    </properties>
   </object>
-  <object id="58" name="woman7" type="villager" gid="7" x="8384" y="512" width="64" height="64">
+  <object name="woman7" type="villager" gid="7" x="8384" y="512" width="64" height="64">
    <properties>
     <property name="dislike" value="man,woman,boy"/>
    </properties>
   </object>
-  <object id="59" name="woman8" type="villager" gid="7" x="8512" y="512" width="64" height="64">
+  <object name="woman8" type="villager" gid="7" x="8512" y="512" width="64" height="64">
    <properties>
     <property name="dislike" value="man,woman"/>
     <property name="like" value="boy"/>
    </properties>
   </object>
-  <object id="60" name="man6" type="villager" gid="12" x="8448" y="512" width="64" height="64">
+  <object name="man6" type="villager" gid="12" x="8448" y="512" width="64" height="64">
    <properties>
     <property name="dislike" value="man,woman,boy"/>
    </properties>
   </object>
-  <object id="61" name="boy8" type="villager" gid="17" x="8576" y="512" width="64" height="64">
+  <object name="boy8" type="villager" gid="17" x="8576" y="512" width="64" height="64">
    <properties>
     <property name="dislike" value="man,woman"/>
     <property name="like" value="boy"/>
    </properties>
   </object>
-  <object id="62" name="boy9" type="villager" gid="17" x="8320" y="512" width="64" height="64">
+  <object name="boy9" type="villager" gid="17" x="8320" y="512" width="64" height="64">
    <properties>
     <property name="dislike" value="man,woman,boy"/>
    </properties>
   </object>
-  <object id="63" name="woman9" type="villager" gid="7" x="8256" y="512" width="64" height="64">
+  <object name="woman9" type="villager" gid="7" x="8256" y="512" width="64" height="64">
    <properties>
     <property name="dislike" value="man,woman,boy"/>
    </properties>
   </object>
-  <object id="64" name="woman10" type="villager" gid="7" x="9216" y="320" width="64" height="64">
+  <object name="woman10" type="villager" gid="7" x="9216" y="320" width="64" height="64">
    <properties>
     <property name="dislike" value="man,boy"/>
     <property name="like" value="woman"/>
    </properties>
   </object>
-  <object id="65" name="woman11" type="villager" gid="7" x="9280" y="320" width="64" height="64">
+  <object name="woman11" type="villager" gid="7" x="9280" y="320" width="64" height="64">
    <properties>
     <property name="dislike" value="man"/>
     <property name="facing" value="left"/>
     <property name="like" value="woman,boy"/>
    </properties>
   </object>
-  <object id="67" name="man6" type="villager" gid="12" x="9536" y="512" width="64" height="64">
+  <object name="man6" type="villager" gid="12" x="9536" y="512" width="64" height="64">
    <properties>
     <property name="dislike" value="woman,boy"/>
     <property name="like" value="man"/>
    </properties>
   </object>
-  <object id="69" name="boy10" type="villager" gid="17" x="9600" y="320" width="64" height="64">
+  <object name="boy10" type="villager" gid="17" x="9600" y="320" width="64" height="64">
    <properties>
     <property name="dislike" value="man"/>
     <property name="like" value="boy,woman"/>
    </properties>
   </object>
-  <object id="70" name="boy11" type="villager" gid="17" x="9536" y="320" width="64" height="64">
+  <object name="boy11" type="villager" gid="17" x="9536" y="320" width="64" height="64">
    <properties>
     <property name="dislike" value="woman"/>
     <property name="like" value="man,boy"/>
    </properties>
   </object>
-  <object id="72" name="man7" type="villager" gid="12" x="9664" y="320" width="64" height="64">
+  <object name="man7" type="villager" gid="12" x="9664" y="320" width="64" height="64">
    <properties>
     <property name="dislike" value="woman,man"/>
     <property name="like" value="boy"/>
    </properties>
   </object>
-  <object id="74" name="man8" type="villager" gid="12" x="10624" y="512" width="64" height="64">
+  <object name="man8" type="villager" gid="12" x="10624" y="512" width="64" height="64">
    <properties>
     <property name="behavior" value="wander"/>
     <property name="dislike" value="woman,man,boy"/>
    </properties>
   </object>
-  <object id="76" name="man9" type="villager" gid="12" x="11776" y="512" width="64" height="64">
+  <object name="man9" type="villager" gid="12" x="11776" y="512" width="64" height="64">
    <properties>
     <property name="like" value="man,woman,boy"/>
    </properties>
   </object>
-  <object id="77" name="woman12" type="villager" gid="7" x="12160" y="448" width="64" height="64">
+  <object name="woman12" type="villager" gid="7" x="12160" y="448" width="64" height="64">
    <properties>
     <property name="dislike" value="man,woman,boy"/>
    </properties>
   </object>
-  <object id="78" name="boy12" type="villager" gid="17" x="12352" y="512" width="64" height="64">
+  <object name="boy12" type="villager" gid="17" x="12352" y="512" width="64" height="64">
    <properties>
     <property name="like" value="man,woman,boy"/>
    </properties>
   </object>
-  <object id="79" name="boy13" type="villager" gid="17" x="12416" y="512" width="64" height="64">
+  <object name="boy13" type="villager" gid="17" x="12416" y="512" width="64" height="64">
    <properties>
     <property name="dislike" value="boy"/>
     <property name="like" value="man,woman"/>
    </properties>
   </object>
-  <object id="80" name="woman13" type="villager" gid="7" x="12672" y="448" width="64" height="64">
+  <object name="woman13" type="villager" gid="7" x="12672" y="448" width="64" height="64">
    <properties>
     <property name="dislike" value="woman,man,boy"/>
    </properties>
   </object>
-  <object id="81" name="woman14" type="villager" gid="7" x="13056" y="448" width="64" height="64">
+  <object name="woman14" type="villager" gid="7" x="13056" y="448" width="64" height="64">
    <properties>
     <property name="dislike" value="woman,man,boy"/>
    </properties>
   </object>
-  <object id="82" name="woman15" type="villager" gid="7" x="14016" y="512" width="64" height="64">
+  <object name="woman15" type="villager" gid="7" x="14016" y="512" width="64" height="64">
    <properties>
     <property name="like" value="man,woman,boy"/>
    </properties>
   </object>
-  <object id="83" name="woman16" type="villager" gid="7" x="14080" y="512" width="64" height="64">
-   <properties>
-    <property name="behavior" value="wander"/>
-    <property name="like" value="man,woman,boy"/>
-   </properties>
-  </object>
-  <object id="84" name="woman17" type="villager" gid="7" x="14144" y="512" width="64" height="64">
+  <object name="woman16" type="villager" gid="7" x="14080" y="512" width="64" height="64">
    <properties>
     <property name="behavior" value="wander"/>
     <property name="like" value="man,woman,boy"/>
    </properties>
   </object>
-  <object id="85" name="woman18" type="villager" gid="7" x="14208" y="512" width="64" height="64">
-   <properties>
-    <property name="like" value="man,woman,boy"/>
-   </properties>
-  </object>
-  <object id="86" name="man10" type="villager" gid="12" x="14272" y="512" width="64" height="64">
-   <properties>
-    <property name="like" value="man,woman,boy"/>
-   </properties>
-  </object>
-  <object id="87" name="man11" type="villager" gid="12" x="14336" y="512" width="64" height="64">
+  <object name="woman17" type="villager" gid="7" x="14144" y="512" width="64" height="64">
    <properties>
     <property name="behavior" value="wander"/>
     <property name="like" value="man,woman,boy"/>
    </properties>
   </object>
-  <object id="88" name="man12" type="villager" gid="12" x="14464" y="512" width="64" height="64">
+  <object name="woman18" type="villager" gid="7" x="14208" y="512" width="64" height="64">
+   <properties>
+    <property name="like" value="man,woman,boy"/>
+   </properties>
+  </object>
+  <object name="man10" type="villager" gid="12" x="14272" y="512" width="64" height="64">
+   <properties>
+    <property name="like" value="man,woman,boy"/>
+   </properties>
+  </object>
+  <object name="man11" type="villager" gid="12" x="14336" y="512" width="64" height="64">
+   <properties>
+    <property name="behavior" value="wander"/>
+    <property name="like" value="man,woman,boy"/>
+   </properties>
+  </object>
+  <object name="man12" type="villager" gid="12" x="14464" y="512" width="64" height="64">
    <properties>
     <property name="behavior" value="wander"/>
     <property name="like" value="man,boy,woman"/>
    </properties>
   </object>
-  <object id="89" name="man13" type="villager" gid="12" x="14400" y="512" width="64" height="64">
+  <object name="man13" type="villager" gid="12" x="14400" y="512" width="64" height="64">
    <properties>
     <property name="like" value="man,boy,woman"/>
    </properties>
   </object>
-  <object id="90" name="boy14" type="villager" gid="17" x="14528" y="512" width="64" height="64">
+  <object name="boy14" type="villager" gid="17" x="14528" y="512" width="64" height="64">
    <properties>
     <property name="like" value="man,boy,woman"/>
    </properties>
   </object>
-  <object id="91" name="boy15" type="villager" gid="17" x="13952" y="512" width="64" height="64">
+  <object name="boy15" type="villager" gid="17" x="13952" y="512" width="64" height="64">
    <properties>
     <property name="behavior" value="wander"/>
     <property name="like" value="man,boy,woman"/>
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="logic">
-  <object id="8" name="hero" type="hero" gid="22" x="0" y="512" width="32" height="32"/>
-  <object id="9" type="checkpoint" gid="28" x="2176" y="512" width="32" height="32"/>
-  <object id="10" type="checkpoint" gid="28" x="1664" y="320" width="32" height="32"/>
-  <object id="11" type="checkpoint" gid="28" x="1216" y="512" width="32" height="32"/>
-  <object id="26" type="checkpoint" gid="28" x="3264" y="320" width="32" height="32"/>
-  <object id="27" type="checkpoint" gid="28" x="4416" y="512" width="32" height="32"/>
-  <object id="35" type="checkpoint" gid="28" x="6208" y="448" width="32" height="32"/>
-  <object id="54" type="checkpoint" gid="28" x="8832" y="448" width="32" height="32"/>
-  <object id="75" type="checkpoint" gid="28" x="11456" y="512" width="32" height="32"/>
+ <objectgroup name="logic" width="0" height="0">
+  <object name="hero" type="hero" gid="22" x="0" y="512" width="32" height="32"/>
+  <object type="checkpoint" gid="28" x="2176" y="512" width="32" height="32"/>
+  <object type="checkpoint" gid="28" x="1664" y="320" width="32" height="32"/>
+  <object type="checkpoint" gid="28" x="1216" y="512" width="32" height="32"/>
+  <object type="checkpoint" gid="28" x="3264" y="320" width="32" height="32"/>
+  <object type="checkpoint" gid="28" x="4416" y="512" width="32" height="32"/>
+  <object type="checkpoint" gid="28" x="6208" y="448" width="32" height="32"/>
+  <object type="checkpoint" gid="28" x="8832" y="448" width="32" height="32"/>
+  <object type="checkpoint" gid="28" x="11456" y="512" width="32" height="32"/>
+ </objectgroup>
+ <objectgroup name="transitions" width="230" height="9">
+  <object name="dungeon &lt;&gt; forest" type="transition" x="2112" y="448" width="64" height="64">
+   <properties>
+    <property name="left" value="dungeon"/>
+    <property name="right" value="forest"/>
+   </properties>
+  </object>
+  <object name="forest &lt;&gt; village" type="transition" x="6336" y="384" width="64" height="64">
+   <properties>
+    <property name="left" value="forest"/>
+    <property name="right" value="village"/>
+   </properties>
+  </object>
+  <object name="village&lt;&gt; forest" type="transition" x="11328" y="384" width="64" height="64">
+   <properties>
+    <property name="left" value="village"/>
+    <property name="right" value="forest"/>
+   </properties>
+  </object>
+  <object name="forest &lt;&gt; dungeon" type="transition" x="13568" y="384" width="64" height="64">
+   <properties>
+    <property name="left" value="forest"/>
+    <property name="right" value="dungeon"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
