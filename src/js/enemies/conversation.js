@@ -44,9 +44,9 @@ export class Conversation {
       ...villager.likes.map(like => {
         return {actor: villager, action: 'like', about: like}
       }),
-    ...this.villager1.dislikes.map(dislike => {
-      return {actor: villager, action: 'dislike', about: dislike}
-    })
+      ...villager.dislikes.map(dislike => {
+        return {actor: villager, action: 'dislike', about: dislike}
+      })
     ];
   }
 
