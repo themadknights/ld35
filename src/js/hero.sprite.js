@@ -4,7 +4,7 @@ import { TILE_SIZE }                         from './map';
 
 const MOVEMENT_MAX_SPEED = 100;
 const JUMP_SPEED = 300;
-const TRANSFORMATION_TIME = 3;
+const TRANSFORMATION_TIME = 5;
 const MAX_HEALTH = 3;
 
 export class Hero extends Phaser.Sprite {
@@ -26,7 +26,7 @@ export class Hero extends Phaser.Sprite {
     this.transformed = null;
 
     this.maxHealth = MAX_HEALTH;
-    this.health = 1;//this.maxHealth;
+    this.health = this.maxHealth;
 
     this.leftKey = this.game.input.keyboard.addKey(Phaser.KeyCode.LEFT);
     this.rightKey = this.game.input.keyboard.addKey(Phaser.KeyCode.RIGHT);
@@ -73,24 +73,28 @@ export class Hero extends Phaser.Sprite {
       this.body.height = TILE_SIZE;
       this.position.y -= TILE_SIZE / 4;
       this.transformed = frame;
-      let timer = this.game.time.create(this.game, true);
-      timer.add(TRANSFORMATION_TIME * Phaser.Timer.SECOND, () => {
+      this.transformationTimer = this.game.time.create(this.game, true);
+      this.transformationTimer.add(TRANSFORMATION_TIME * Phaser.Timer.SECOND, () => {
         this.reverTrasformation();
       });
-      timer.start();
+      this.transformationTimer.start();
     }
   }
 
   reverTrasformation() {
-    this.loadTexture('hero');
-    this.body.width = TILE_SIZE / 2;
-    this.body.height = TILE_SIZE / 2;
-    this.position.y += TILE_SIZE / 4;
-    this.transformed = null;
+    if (this.transformed !== null) {
+      this.transformationTimer.destroy();
+      this.loadTexture('hero');
+      this.body.width = TILE_SIZE / 2;
+      this.body.height = TILE_SIZE / 2;
+      this.position.y += TILE_SIZE / 4;
+      this.transformed = null;
+    }
   }
 
   damage(amount = 1) {
     if(!this.invulnerable) {
+        this.reverTrasformation();
         this.invulnerable = true;
         this.health -= amount;
         if (this.health <= 0) {
