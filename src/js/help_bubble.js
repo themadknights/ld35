@@ -15,7 +15,7 @@ const HELP_TEXT = {
 
     Just kidding. That villager is a
     marionette. It can still hurt you
-    but you are gonna surive.
+    but you are gonna survive.
 
     Keep moving!
   `,
