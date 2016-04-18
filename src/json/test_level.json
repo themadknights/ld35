@@ -1,23 +1,27 @@
 { "height":9,
  "layers":[
         {
-         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 4, 3, 4, 3, 3, 0, 0, 0, 0, 3, 3, 0, 0, 0, 0, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 4, 0, 0, 0, 3, 3, 0, 0, 0, 0, 0, 0, 3, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0, 0, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 3, 3, 3, 4, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+         "compression":"zlib",
+         "data":"eJzt00sKACAIBUC17n\/mNgohSJBBoG9AlH6LRCIAAADogDV+3e\/O\/k+CPaF8f06Gi6kZ3rqZFeuFRWUchCTW\/PvRGav9DOy1z9X7sgAYYwB\/",
+         "encoding":"base64",
          "height":9,
          "name":"foreground",
          "opacity":1,
          "type":"tilelayer",
          "visible":true,
-         "width":20,
+         "width":100,
          "x":0,
          "y":0
         }, 
         {
+         "draworder":"topdown",
          "height":9,
          "name":"npcs",
          "objects":[
                 {
                  "gid":10,
-                 "height":0,
+                 "height":64,
+                 "id":1,
                  "name":"man1",
                  "properties":
                     {
@@ -26,98 +30,109 @@
                      "facing":"left",
                      "like":"man,woman"
                     },
+                 "rotation":0,
                  "type":"villager",
                  "visible":true,
-                 "width":0,
-                 "x":384,
-                 "y":512
+                 "width":64,
+                 "x":3008,
+                 "y":448
                 }, 
                 {
                  "gid":7,
-                 "height":0,
+                 "height":64,
+                 "id":2,
                  "name":"woman1",
                  "properties":
                     {
-                     "dislike":"man,boy",
-                     "like":"woman"
+                     "like":"woman,man,boy"
                     },
+                 "rotation":0,
                  "type":"villager",
                  "visible":true,
-                 "width":0,
-                 "x":192,
-                 "y":512
+                 "width":64,
+                 "x":2496,
+                 "y":384
                 }, 
                 {
                  "gid":13,
-                 "height":0,
+                 "height":64,
+                 "id":3,
                  "name":"boy1",
                  "properties":
                     {
-                     "behavior":"wander",
-                     "dislike":"man,woman",
-                     "like":"boy"
+                     "facing":"left",
+                     "like":"boy,man,woman"
                     },
+                 "rotation":0,
                  "type":"villager",
                  "visible":true,
-                 "width":0,
-                 "x":768,
-                 "y":512
+                 "width":64,
+                 "x":2752,
+                 "y":384
                 }, 
                 {
                  "gid":7,
-                 "height":0,
+                 "height":64,
+                 "id":4,
                  "name":"woman2",
                  "properties":
                     {
                      "like":"man"
                     },
+                 "rotation":0,
                  "type":"villager",
                  "visible":true,
-                 "width":0,
-                 "x":960,
-                 "y":512
+                 "width":64,
+                 "x":3008,
+                 "y":192
                 }, 
                 {
                  "gid":10,
-                 "height":0,
+                 "height":64,
+                 "id":5,
                  "name":"man2",
                  "properties":
                     {
 
                     },
+                 "rotation":0,
                  "type":"villager",
                  "visible":true,
-                 "width":0,
-                 "x":384,
-                 "y":64
+                 "width":64,
+                 "x":3008,
+                 "y":256
                 }, 
                 {
                  "gid":7,
-                 "height":0,
+                 "height":64,
+                 "id":6,
                  "name":"woman3",
                  "properties":
                     {
 
                     },
+                 "rotation":0,
                  "type":"villager",
                  "visible":true,
-                 "width":0,
-                 "x":768,
-                 "y":256
+                 "width":64,
+                 "x":3008,
+                 "y":512
                 }, 
                 {
                  "gid":13,
-                 "height":0,
+                 "height":64,
+                 "id":7,
                  "name":"boy2",
                  "properties":
                     {
 
                     },
+                 "rotation":0,
                  "type":"villager",
                  "visible":true,
-                 "width":0,
-                 "x":1152,
-                 "y":192
+                 "width":64,
+                 "x":3008,
+                 "y":128
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -127,64 +142,73 @@
          "y":0
         }, 
         {
+         "draworder":"topdown",
          "height":9,
          "name":"logic",
          "objects":[
                 {
-                 "gid":16,
-                 "height":0,
+                 "gid":22,
+                 "height":32,
+                 "id":8,
                  "name":"hero",
                  "properties":
                     {
 
                     },
+                 "rotation":0,
                  "type":"hero",
                  "visible":true,
-                 "width":0,
-                 "x":384,
-                 "y":384
-                }, 
-                {
-                 "gid":18,
-                 "height":0,
-                 "name":"",
-                 "properties":
-                    {
-
-                    },
-                 "type":"checkpoint",
-                 "visible":true,
-                 "width":0,
-                 "x":1024,
-                 "y":384
-                }, 
-                {
-                 "gid":18,
-                 "height":0,
-                 "name":"",
-                 "properties":
-                    {
-
-                    },
-                 "type":"checkpoint",
-                 "visible":true,
-                 "width":0,
-                 "x":640,
+                 "width":32,
+                 "x":0,
                  "y":512
                 }, 
                 {
-                 "gid":18,
-                 "height":0,
+                 "gid":24,
+                 "height":32,
+                 "id":9,
                  "name":"",
                  "properties":
                     {
 
                     },
+                 "rotation":0,
                  "type":"checkpoint",
                  "visible":true,
-                 "width":0,
-                 "x":192,
-                 "y":256
+                 "width":32,
+                 "x":2176,
+                 "y":512
+                }, 
+                {
+                 "gid":24,
+                 "height":32,
+                 "id":10,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "rotation":0,
+                 "type":"checkpoint",
+                 "visible":true,
+                 "width":32,
+                 "x":1664,
+                 "y":320
+                }, 
+                {
+                 "gid":24,
+                 "height":32,
+                 "id":11,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "rotation":0,
+                 "type":"checkpoint",
+                 "visible":true,
+                 "width":32,
+                 "x":1216,
+                 "y":512
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -193,11 +217,13 @@
          "x":0,
          "y":0
         }],
+ "nextobjectid":12,
  "orientation":"orthogonal",
  "properties":
     {
 
     },
+ "renderorder":"right-down",
  "tileheight":64,
  "tilesets":[
         {
@@ -212,6 +238,7 @@
 
             },
          "spacing":0,
+         "tilecount":6,
          "tileheight":64,
          "tilewidth":64
         }, 
@@ -219,7 +246,7 @@
          "firstgid":7,
          "image":"..\/images\/villagers.png",
          "imageheight":64,
-         "imagewidth":576,
+         "imagewidth":960,
          "margin":0,
          "name":"villagers",
          "properties":
@@ -227,11 +254,12 @@
 
             },
          "spacing":0,
+         "tilecount":15,
          "tileheight":64,
          "tilewidth":64
         }, 
         {
-         "firstgid":16,
+         "firstgid":22,
          "image":"..\/images\/hero.png",
          "imageheight":32,
          "imagewidth":64,
@@ -242,11 +270,12 @@
 
             },
          "spacing":0,
+         "tilecount":2,
          "tileheight":32,
          "tilewidth":32
         }, 
         {
-         "firstgid":18,
+         "firstgid":24,
          "image":"..\/images\/checkpoint.png",
          "imageheight":32,
          "imagewidth":96,
@@ -257,10 +286,11 @@
 
             },
          "spacing":0,
+         "tilecount":3,
          "tileheight":32,
          "tilewidth":32
         }],
  "tilewidth":64,
  "version":1,
- "width":20
+ "width":100
 }
