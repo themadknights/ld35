@@ -15,6 +15,7 @@ export class Checkpoint extends Phaser.Sprite {
     if (!this.active) {
       this.active = true;
       this.play('activate');
+      this.gameState.audioManager.playFx('checkpointFx');
       this.gameState.savePosition = this.position;
     }
   }

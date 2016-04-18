@@ -5,6 +5,7 @@ import { TILE_SIZE }                         from './map';
 const MOVEMENT_MAX_SPEED = 150;
 const JUMP_SPEED = 300;
 const TRANSFORMATION_TIME = 5;
+const WARNING_TIME = 4;
 const MAX_HEALTH = 2;
 
 export class Hero extends Phaser.Sprite {
@@ -80,6 +81,7 @@ export class Hero extends Phaser.Sprite {
       this.body.height = TILE_SIZE;
       this.position.y -= TILE_SIZE / 4;
       this.transformed = frame;
+      this.gameState.audioManager.playFx('transformationFx');
 
       this.animations.add("walk", [frame + 3, frame + 4], 4, true);
 
@@ -88,12 +90,22 @@ export class Hero extends Phaser.Sprite {
         this.reverTrasformation();
       });
       this.transformationTimer.start();
+
+      this.warningTimer = this.game.time.create(this.game, true);
+      this.warningTimer.add(WARNING_TIME * Phaser.Timer.SECOND, () => {
+        this.gameState.audioManager.playFx('warningFx');
+        this.reversingTransformationTween = this.game.add.tween(this).to({ alpha: "-0.2" }, 0.1 * Phaser.Timer.SECOND, "Linear", true, 0, -1);
+        this.reversingTransformationTween.yoyo(true, 0);
+      });
+      this.warningTimer.start();
     }
   }
 
   reverTrasformation() {
     if (this.transformed !== null) {
       this.transformationTimer.destroy();
+      this.warningTimer.destroy();
+      this.game.tweens.remove(this.reversingTransformationTween);
       this.loadTexture('hero');
       this.body.width = TILE_SIZE / 2;
       this.body.height = TILE_SIZE / 2;
