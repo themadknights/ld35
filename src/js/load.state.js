@@ -28,13 +28,15 @@ export class LoadState extends Phaser.State {
     this.load.audio('damageFx', require('../sounds/damage.wav'));
     this.load.audio('deathFx', require('../sounds/death.wav'));
 
+    this.load.tilemap('instructionsLevel', require('../json/instructions_level.json'), null, Phaser.Tilemap.TILED_JSON);
+    this.load.tilemap('startLevel', require('../json/start_level.json'), null, Phaser.Tilemap.TILED_JSON);
     this.load.tilemap('testLevel', require('../json/test_level.json'), null, Phaser.Tilemap.TILED_JSON);
 
     this.game.sound.mute = process.env.NODE_ENV === 'production' ? false : true;
   }
 
   create () {
-    const stateId = process.env.NODE_ENV === 'production' ? 'publisher' : 'main';
+    const stateId = process.env.NODE_ENV === 'production' ? 'publisher' : 'start';
 
     this.game.state.start(stateId, true, false);
   }

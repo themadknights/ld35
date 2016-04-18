@@ -4,7 +4,7 @@ import { AudioManager }   from './audio.manager';
 
 const GRAVITY_SPEED = 300;
 
-export class MainState extends Phaser.State {
+export class InstructionsState extends Phaser.State {
   init(savePosition) {
     this.physics.startSystem(Phaser.Physics.ARCADE);
     this.savePosition = savePosition;
@@ -19,7 +19,7 @@ export class MainState extends Phaser.State {
     this.background.fixedToCamera = true;
     this.cameraLastPositionX = this.camera.position.x;
 
-    this.map = new Map(this, 'testLevel');
+    this.map = new Map(this, 'instructionsLevel');
     this.hero = new Hero(this, this.game.world.centerX, this.game.world.centerY);
     this.enemies = this.game.add.group();
     this.checkpoints = this.game.add.group();
@@ -73,10 +73,8 @@ export class MainState extends Phaser.State {
     this.background.autoScroll((this.cameraLastPositionX - this.camera.position.x) * 20, 0);
     this.cameraLastPositionX = this.camera.position.x;
 
-    if (this.hero.position.x < 0) {
-      this.game.state.start('start', true, false, { x: this.game.width - TILE_SIZE / 2, y: this.game.height - TILE_SIZE * 1.25 });
-    } else if (this.hero.position.y > this.game.height) {
-      this.hero.die();
+    if (this.hero.position.x > this.world.width) {
+      this.game.state.start('start', true, false, { x: TILE_SIZE / 2, y: this.game.height - TILE_SIZE * 1.25 });
     }
   }
 

@@ -18,7 +18,6 @@ export class Hero extends Phaser.Sprite {
     this.game.add.existing(this);
 
     this.game.physics.arcade.enable(this);
-    this.body.collideWorldBounds = true;
 
     this.animations.add("slime", [0, 1], 6, true);
 
@@ -106,29 +105,36 @@ export class Hero extends Phaser.Sprite {
 
   damage(amount = 1) {
     if(!this.invulnerable) {
-        this.reverTrasformation();
-        this.invulnerable = true;
-        this.health -= amount;
-        if (this.health <= 0) {
-          this.gameState.audioManager.playFx('deathFx');
-          this.inputDisabled = true;
-          this.deathTween = this.game.add.tween(this.scale).to({ x: 0.1, y: 0.1 }, 0.5 * Phaser.Timer.SECOND, "Linear");
-          this.deathTween.start();
-          this.deathTween.onComplete.add(() => {
-            this.gameState.restart();
-          });
-        } else {
-          this.gameState.audioManager.playFx('damageFx');
-          this.immunityTween = this.game.add.tween(this).to({ alpha: 0 }, 0.1 * Phaser.Timer.SECOND, "Linear", true, 0, -1);
-          this.immunityTween.yoyo(true, 0);
-          let timer = this.game.time.create(this.game, true);
-          timer.add(2*Phaser.Timer.SECOND, function() {
-              this.game.tweens.remove(this.immunityTween);
-              this.invulnerable = false;
-              this.alpha = 1;
-          }, this);
-          timer.start();
-        }
+      this.reverTrasformation();
+      this.invulnerable = true;
+      this.health -= amount;
+      if (this.health <= 0) {
+        this.die();
+      } else {
+        this.gameState.audioManager.playFx('damageFx');
+        this.immunityTween = this.game.add.tween(this).to({ alpha: 0 }, 0.1 * Phaser.Timer.SECOND, "Linear", true, 0, -1);
+        this.immunityTween.yoyo(true, 0);
+        let timer = this.game.time.create(this.game, true);
+        timer.add(2*Phaser.Timer.SECOND, function() {
+            this.game.tweens.remove(this.immunityTween);
+            this.invulnerable = false;
+            this.alpha = 1;
+        }, this);
+        timer.start();
+      }
+    }
+  }
+
+  die() {
+    if (!this.dying) {
+      this.dying = true;
+      this.gameState.audioManager.playFx('deathFx');
+      this.inputDisabled = true;
+      this.deathTween = this.game.add.tween(this.scale).to({ x: 0.1, y: 0.1 }, 0.5 * Phaser.Timer.SECOND, "Linear");
+      this.deathTween.start();
+      this.deathTween.onComplete.add(() => {
+        this.gameState.restart();
+      });
     }
   }
 
