@@ -24,6 +24,8 @@ export class LoadState extends Phaser.State {
 
     this.load.audio('music0', require('../sounds/music_village.ogg'));
     this.load.audio('jumpFx', require('../sounds/jump.wav'));
+    this.load.audio('damageFx', require('../sounds/damage.wav'));
+    this.load.audio('deathFx', require('../sounds/death.wav'));
 
     this.load.tilemap('testLevel', require('../json/test_level.json'), null, Phaser.Tilemap.TILED_JSON);
 

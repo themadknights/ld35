@@ -26,7 +26,7 @@ export class Hero extends Phaser.Sprite {
     this.transformed = null;
 
     this.maxHealth = MAX_HEALTH;
-    this.health = this.maxHealth;
+    this.health = 1;//this.maxHealth;
 
     this.leftKey = this.game.input.keyboard.addKey(Phaser.KeyCode.LEFT);
     this.rightKey = this.game.input.keyboard.addKey(Phaser.KeyCode.RIGHT);
@@ -44,9 +44,9 @@ export class Hero extends Phaser.Sprite {
   }
 
   update() {
-    if (this.leftKey.isDown) {
+    if (!this.inputDisabled && this.leftKey.isDown) {
       this.body.velocity.x = -MOVEMENT_MAX_SPEED;
-    } else if (this.rightKey.isDown) {
+    } else if (!this.inputDisabled && this.rightKey.isDown) {
       this.body.velocity.x = MOVEMENT_MAX_SPEED;
     } else {
       this.body.velocity.x = 0;
@@ -60,7 +60,7 @@ export class Hero extends Phaser.Sprite {
       }
     }
 
-    if (this.body.blocked.down && this.jumpKey.isDown) {
+    if (!this.inputDisabled && this.body.blocked.down && this.jumpKey.isDown) {
       this.gameState.audioManager.playFx('jumpFx');
       this.body.velocity.y = -JUMP_SPEED;
     }
@@ -92,19 +92,27 @@ export class Hero extends Phaser.Sprite {
   damage(amount = 1) {
     if(!this.invulnerable) {
         this.invulnerable = true;
-        let timer = this.game.time.create(this.game, true);
-        this.immunityTween = this.game.add.tween(this).to({ alpha: 0 }, 0.1 * Phaser.Timer.SECOND, "Linear", true, 0, -1);
-        this.immunityTween.yoyo(true, 0);
         this.health -= amount;
-        timer.add(2*Phaser.Timer.SECOND, function() {
-            this.game.tweens.remove(this.immunityTween);
-            this.invulnerable = false;
-            this.alpha = 1;
-            if (this.health <= 0) {
-                this.gameState.restart();
-            }
-        }, this);
-        timer.start();
+        if (this.health <= 0) {
+          this.gameState.audioManager.playFx('deathFx');
+          this.inputDisabled = true;
+          this.deathTween = this.game.add.tween(this.scale).to({ x: 0.1, y: 0.1 }, 0.5 * Phaser.Timer.SECOND, "Linear");
+          this.deathTween.start();
+          this.deathTween.onComplete.add(() => {
+            this.gameState.restart();
+          });
+        } else {
+          this.gameState.audioManager.playFx('damageFx');
+          this.immunityTween = this.game.add.tween(this).to({ alpha: 0 }, 0.1 * Phaser.Timer.SECOND, "Linear", true, 0, -1);
+          this.immunityTween.yoyo(true, 0);
+          let timer = this.game.time.create(this.game, true);
+          timer.add(2*Phaser.Timer.SECOND, function() {
+              this.game.tweens.remove(this.immunityTween);
+              this.invulnerable = false;
+              this.alpha = 1;
+          }, this);
+          timer.start();
+        }
     }
   }
 
