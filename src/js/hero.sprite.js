@@ -2,7 +2,7 @@ import { Conversation }                      from './enemies/conversation';
 import { WOMAN_FRAME, MAN_FRAME, BOY_FRAME } from './enemies/villager.sprite';
 import { TILE_SIZE }                         from './map';
 
-const MOVEMENT_MAX_SPEED = 100;
+const MOVEMENT_MAX_SPEED = 150;
 const JUMP_SPEED = 300;
 const TRANSFORMATION_TIME = 5;
 const MAX_HEALTH = 3;
