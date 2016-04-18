@@ -8,13 +8,14 @@ export class MainState extends Phaser.State {
   init(savePosition) {
     this.physics.startSystem(Phaser.Physics.ARCADE);
     this.savePosition = savePosition;
+    this.currentBackgroundId = 'dungeon_background';
   }
 
   create() {
     this.physics.arcade.gravity.y = GRAVITY_SPEED;
 
     //Creating background
-    this.background = this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'dungeon_background');
+    this.background = this.game.add.tileSprite(0, 0, this.game.width, this.game.height, this.currentBackgroundId);
     this.background.sendToBack();
     this.background.fixedToCamera = true;
     this.cameraLastPositionX = this.camera.position.x;
@@ -23,6 +24,7 @@ export class MainState extends Phaser.State {
     this.hero = new Hero(this, this.game.world.centerX, this.game.world.centerY);
     this.enemies = this.game.add.group();
     this.checkpoints = this.game.add.group();
+    this.transitions = this.game.add.group();
 
     this.audioManager = new AudioManager(this.game);
     this.audioManager.playMusic('music0');
@@ -82,6 +84,7 @@ export class MainState extends Phaser.State {
 
   render() {
     //this.game.debug.body(this.hero);
+    //this.transitions.forEach(transition => this.game.debug.body(transition));
   }
 
   start() {
@@ -126,5 +129,18 @@ export class MainState extends Phaser.State {
     this.cameraOverlay = this.game.add.image(0, 0, 'cameraOverlay');
     this.cameraOverlay.alpha = 1;
     this.cameraOverlay.fixedToCamera = true;
+  }
+
+  makeBackgroundTransitionTo(backgroundId) {
+    let tween = this.game.add.tween(this.background).to({
+      alpha: 0.2
+    }, Phaser.Timer.HALF, "Linear", true);
+    tween.start();
+    tween.onComplete.add(() => {
+      this.background.loadTexture(backgroundId);
+      this.game.add.tween(this.background).to({
+        alpha: 1
+      }, Phaser.Timer.HALF, "Linear", true).start();
+    });
   }
 }

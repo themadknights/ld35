@@ -1,6 +1,7 @@
-import { Villager }   from './enemies/villager.sprite';
-import { Checkpoint } from './checkpoint.sprite';
-import { HelpBubble } from './help_bubble';
+import { Villager }             from './enemies/villager.sprite';
+import { Checkpoint }           from './checkpoint.sprite';
+import { HelpBubble }           from './help_bubble';
+import { BackgroundTransition } from './background_transition';
 
 export const TILE_SIZE = 64;
 
@@ -24,6 +25,7 @@ export class Map extends Phaser.Tilemap {
     this.loadHero();
     this.loadCheckpoints();
     this.loadHelp();
+    this.loadTransitions();
   }
 
   loadVillagers() {
@@ -53,6 +55,12 @@ export class Map extends Phaser.Tilemap {
   loadHelp() {
     this.forEachObject("help", "help", (data) => {
       this.gameState.helpBubbles.add(new HelpBubble(this.gameState, data));
+    });
+  }
+
+  loadTransitions() {
+    this.forEachObject("transitions", "transition", (data) => {
+      this.gameState.transitions.add(new BackgroundTransition(this.gameState, data));
     });
   }
 
