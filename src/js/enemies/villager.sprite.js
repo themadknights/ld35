@@ -11,8 +11,8 @@ import { Conversation }     from './conversation';
 import { TILE_SIZE }        from '../map';
 
 export const WOMAN_FRAME = 0;
-export const MAN_FRAME = 3;
-export const BOY_FRAME = 6;
+export const MAN_FRAME = 5;
+export const BOY_FRAME = 10;
 
 const MAX_SPEED = 100;
 const CHASE_MAX_SPEED = 200;
@@ -23,9 +23,10 @@ const TALKING_COOLDOWN = 5;
 export class Villager extends Enemy {
   constructor(state, { x, y, frame, properties }) {
     super(state, x, y, 'villagers');
-    this.frame = frame;
+    this.initialFrame = frame;
 
-    this.animations.add("talk", [frame, frame + 1], 2, true);
+    this.frame = this.initialFrame;
+
     this.speed = MAX_SPEED;
     this.normalVelocity = this.speed;
 
@@ -45,6 +46,9 @@ export class Villager extends Enemy {
     } else {
       this.dislikes = [];
     }
+
+    this.animations.add("talk", [this.initialFrame, this.initialFrame + 1], 2, true);
+    this.animations.add("walk", [this.initialFrame + 3, this.initialFrame + 4], 4, true);
 
     this.behaviors.push(new DontStop(this));
 
@@ -87,11 +91,17 @@ export class Villager extends Enemy {
         }
       });
     }
+
+    if (this.body.velocity.x !== 0) {
+      this.play('walk');
+    }
   }
 
   startTalking() {
     this.talking = true;
     this.body.velocity.x = 0;
+    this.frame = this.initialFrame;
+    this.animations.stop('walk');
   }
 
   stopTalking() {
@@ -100,6 +110,7 @@ export class Villager extends Enemy {
     this.talking = false;
     this.canTalk = false;
     this.comic.visible = false;
+    this.animations.stop('talk');
 
     if (this.isFacingRight()) {
       this.body.velocity.x = -this.speed;

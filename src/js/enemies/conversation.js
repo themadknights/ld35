@@ -66,10 +66,13 @@ export class Conversation {
         currentTurn.actor.comic.frame = currentTurn.action === 'like' ? 0 : 1;
         currentTurn.actor.talkingAbout.frame = Conversation.getConversationFrame(currentTurn.about);
         currentTurn.actor.comic.visible = true;
+        currentTurn.actor.play('talk');
 
         timer.add(SECONDS_TALKING * Phaser.Timer.SECOND, () => {
           let timer = this.game.time.create(this.game, true);
           currentTurn.actor.comic.visible = false;
+          currentTurn.actor.animations.stop('talk');
+          currentTurn.actor.frame = currentTurn.actor.initialFrame;
 
           timer.add(SECONDS_PAUSE * Phaser.Timer.SECOND, () => {
             this.scheduleNextTurn();
