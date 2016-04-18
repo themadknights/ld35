@@ -33,6 +33,7 @@ export class MainState extends Phaser.State {
       this.hero.position.copyFrom(this.savePosition);
     }
     this.createHUD();
+    this.start();
   }
 
   update() {
@@ -77,8 +78,21 @@ export class MainState extends Phaser.State {
     //this.game.debug.body(this.hero);
   }
 
+  start() {
+    this.cameraOverlayTween = this.game.add.tween(this.cameraOverlay).to({
+        alpha: 0
+    },  Phaser.Timer.HALF, "Linear", true);
+    this.cameraOverlayTween.start();
+  }
+
   restart() {
-    this.game.state.start('main', true, false, this.savePosition);
+    this.cameraOverlayTween = this.game.add.tween(this.cameraOverlay).to({
+        alpha: 1
+    },  Phaser.Timer.HALF, "Linear", true);
+    this.cameraOverlayTween.onComplete.add(() => {
+      this.game.state.start('main', true, false, this.savePosition);
+    });
+    this.cameraOverlayTween.start();
   }
 
   createHUD() {
@@ -101,5 +115,10 @@ export class MainState extends Phaser.State {
     this.transformationBar.anchor.setTo(0.5);
     this.transformationBar.alpha = 0.9;
     this.hud.add(this.transformationBar);
+
+
+    this.cameraOverlay = this.game.add.image(0, 0, 'cameraOverlay');
+    this.cameraOverlay.alpha = 1;
+    this.cameraOverlay.fixedToCamera = true;
   }
 }

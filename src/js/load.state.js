@@ -21,6 +21,7 @@ export class LoadState extends Phaser.State {
     this.load.image('tmkLogo', require('../images/TMKGameboyLogoNoTitle.png'));
     this.load.image('tileset', require('../images/tileset.png'));
     this.load.image('transformationHud', require('../images/hud.png'));
+    this.load.image('cameraOverlay', require('../images/camera_overlay.png'));
 
     this.load.audio('music0', require('../sounds/music_village.ogg'));
     this.load.audio('jumpFx', require('../sounds/jump.wav'));
