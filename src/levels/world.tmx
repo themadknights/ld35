@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="170" height="9" tilewidth="64" tileheight="64" nextobjectid="55">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="180" height="9" tilewidth="64" tileheight="64" nextobjectid="76">
  <tileset firstgid="1" name="tileset" tilewidth="64" tileheight="64" tilecount="6">
   <image source="../images/tileset.png" width="128" height="192"/>
  </tileset>
@@ -12,7 +12,7 @@
  <tileset firstgid="28" name="checkpoint" tilewidth="32" tileheight="32" tilecount="3">
   <image source="../images/checkpoint.png" width="96" height="32"/>
  </tileset>
- <layer name="foreground" width="170" height="9">
+ <layer name="foreground" width="180" height="9">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -411,6 +411,26 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="3"/>
    <tile gid="4"/>
    <tile gid="3"/>
@@ -582,6 +602,16 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="0"/>
@@ -689,6 +719,16 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="5"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -859,6 +899,16 @@
    <tile gid="0"/>
    <tile gid="5"/>
    <tile gid="5"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -1009,7 +1059,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="5"/>
-   <tile gid="0"/>
+   <tile gid="5"/>
    <tile gid="0"/>
    <tile gid="5"/>
    <tile gid="5"/>
@@ -1032,6 +1082,16 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="5"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -1204,6 +1264,16 @@
    <tile gid="6"/>
    <tile gid="5"/>
    <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="6"/>
+   <tile gid="5"/>
+   <tile gid="3"/>
+   <tile gid="6"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -1346,17 +1416,8 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
    <tile gid="5"/>
    <tile gid="5"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
    <tile gid="5"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -1366,6 +1427,16 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="5"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -1374,6 +1445,15 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="3"/>
+   <tile gid="5"/>
+   <tile gid="3"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
@@ -1544,6 +1624,16 @@
    <tile gid="6"/>
    <tile gid="5"/>
    <tile gid="5"/>
+   <tile gid="6"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="3"/>
+   <tile gid="5"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
   </data>
  </layer>
  <objectgroup name="npcs">
@@ -1653,6 +1743,81 @@
     <property name="like" value="woman"/>
    </properties>
   </object>
+  <object id="58" name="woman7" type="villager" gid="7" x="8384" y="512" width="64" height="64">
+   <properties>
+    <property name="dislike" value="man,woman,boy"/>
+   </properties>
+  </object>
+  <object id="59" name="woman8" type="villager" gid="7" x="8512" y="512" width="64" height="64">
+   <properties>
+    <property name="dislike" value="man,woman"/>
+    <property name="like" value="boy"/>
+   </properties>
+  </object>
+  <object id="60" name="man6" type="villager" gid="12" x="8448" y="512" width="64" height="64">
+   <properties>
+    <property name="dislike" value="man,woman,boy"/>
+   </properties>
+  </object>
+  <object id="61" name="boy8" type="villager" gid="17" x="8576" y="512" width="64" height="64">
+   <properties>
+    <property name="dislike" value="man,woman"/>
+    <property name="like" value="boy"/>
+   </properties>
+  </object>
+  <object id="62" name="boy9" type="villager" gid="17" x="8320" y="512" width="64" height="64">
+   <properties>
+    <property name="dislike" value="man,woman,boy"/>
+   </properties>
+  </object>
+  <object id="63" name="woman9" type="villager" gid="7" x="8256" y="512" width="64" height="64">
+   <properties>
+    <property name="dislike" value="man,woman,boy"/>
+   </properties>
+  </object>
+  <object id="64" name="woman10" type="villager" gid="7" x="9216" y="320" width="64" height="64">
+   <properties>
+    <property name="dislike" value="man,boy"/>
+    <property name="like" value="woman"/>
+   </properties>
+  </object>
+  <object id="65" name="woman11" type="villager" gid="7" x="9280" y="320" width="64" height="64">
+   <properties>
+    <property name="dislike" value="man"/>
+    <property name="facing" value="left"/>
+    <property name="like" value="woman,boy"/>
+   </properties>
+  </object>
+  <object id="67" name="man6" type="villager" gid="12" x="9536" y="512" width="64" height="64">
+   <properties>
+    <property name="dislike" value="woman,boy"/>
+    <property name="like" value="man"/>
+   </properties>
+  </object>
+  <object id="69" name="boy10" type="villager" gid="17" x="9600" y="320" width="64" height="64">
+   <properties>
+    <property name="dislike" value="man"/>
+    <property name="like" value="boy,woman"/>
+   </properties>
+  </object>
+  <object id="70" name="boy11" type="villager" gid="17" x="9536" y="320" width="64" height="64">
+   <properties>
+    <property name="dislike" value="woman"/>
+    <property name="like" value="man,boy"/>
+   </properties>
+  </object>
+  <object id="72" name="man7" type="villager" gid="12" x="9664" y="320" width="64" height="64">
+   <properties>
+    <property name="dislike" value="woman,man"/>
+    <property name="like" value="boy"/>
+   </properties>
+  </object>
+  <object id="74" name="man8" type="villager" gid="12" x="10624" y="512" width="64" height="64">
+   <properties>
+    <property name="behavior" value="wander"/>
+    <property name="dislike" value="woman,man,boy"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="logic">
   <object id="8" name="hero" type="hero" gid="22" x="7680" y="512" width="32" height="32"/>
@@ -1663,5 +1828,6 @@
   <object id="27" type="checkpoint" gid="28" x="4416" y="512" width="32" height="32"/>
   <object id="35" type="checkpoint" gid="28" x="6208" y="448" width="32" height="32"/>
   <object id="54" type="checkpoint" gid="28" x="8832" y="448" width="32" height="32"/>
+  <object id="75" type="checkpoint" gid="28" x="11456" y="512" width="32" height="32"/>
  </objectgroup>
 </map>
