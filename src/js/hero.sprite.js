@@ -106,6 +106,7 @@ export class Hero extends Phaser.Sprite {
       this.transformationTimer.destroy();
       this.warningTimer.destroy();
       this.game.tweens.remove(this.reversingTransformationTween);
+      this.alpha = 1;
       this.loadTexture('hero');
       this.body.width = TILE_SIZE / 2;
       this.body.height = TILE_SIZE / 2;
