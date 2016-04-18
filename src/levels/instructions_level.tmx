@@ -403,5 +403,9 @@
   <object name="hero" type="hero" gid="22" x="2496" y="512" width="32" height="32"/>
   <object type="checkpoint" gid="28" x="2368" y="512"/>
  </objectgroup>
- <objectgroup name="help" width="40" height="9"/>
+ <objectgroup name="help" width="40" height="9">
+  <object name="control_and_checkpoint" type="help" x="2432" y="448" width="64" height="64"/>
+  <object name="enemies" type="help" x="1984" y="448" width="64" height="64"/>
+  <object name="mechanic" type="help" x="1408" y="448" width="64" height="64"/>
+ </objectgroup>
 </map>

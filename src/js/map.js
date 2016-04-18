@@ -1,7 +1,8 @@
-export const TILE_SIZE = 64;
-
-import { Villager } from './enemies/villager.sprite';
+import { Villager }   from './enemies/villager.sprite';
 import { Checkpoint } from './checkpoint.sprite';
+import { HelpBubble } from './help_bubble';
+
+export const TILE_SIZE = 64;
 
 export class Map extends Phaser.Tilemap {
   constructor(state, levelId) {
@@ -22,6 +23,7 @@ export class Map extends Phaser.Tilemap {
     this.loadVillagers();
     this.loadHero();
     this.loadCheckpoints();
+    this.loadHelp();
   }
 
   loadVillagers() {
@@ -45,6 +47,12 @@ export class Map extends Phaser.Tilemap {
     this.forEachObject("logic", "checkpoint", (data) => {
       data.y += TILE_SIZE / 4;
       this.gameState.checkpoints.add(new Checkpoint(this.gameState, data));
+    });
+  }
+
+  loadHelp() {
+    this.forEachObject("help", "help", (data) => {
+      this.gameState.helpBubbles.add(new HelpBubble(this.gameState, data));
     });
   }
 

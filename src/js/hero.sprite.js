@@ -5,7 +5,7 @@ import { TILE_SIZE }                         from './map';
 const MOVEMENT_MAX_SPEED = 150;
 const JUMP_SPEED = 300;
 const TRANSFORMATION_TIME = 5;
-const MAX_HEALTH = 3;
+const MAX_HEALTH = 2;
 
 export class Hero extends Phaser.Sprite {
   constructor(state, x, y) {
@@ -107,7 +107,9 @@ export class Hero extends Phaser.Sprite {
     if(!this.invulnerable) {
       this.reverTrasformation();
       this.invulnerable = true;
-      this.health -= amount;
+      if (!this.godMode) {
+        this.health -= amount;
+      }
       if (this.health <= 0) {
         this.die();
       } else {

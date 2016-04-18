@@ -125,7 +125,46 @@
         {
          "height":9,
          "name":"help",
-         "objects":[],
+         "objects":[
+                {
+                 "height":64,
+                 "name":"control_and_checkpoint",
+                 "properties":
+                    {
+
+                    },
+                 "type":"help",
+                 "visible":true,
+                 "width":64,
+                 "x":2432,
+                 "y":448
+                }, 
+                {
+                 "height":64,
+                 "name":"enemies",
+                 "properties":
+                    {
+
+                    },
+                 "type":"help",
+                 "visible":true,
+                 "width":64,
+                 "x":1984,
+                 "y":448
+                }, 
+                {
+                 "height":64,
+                 "name":"mechanic",
+                 "properties":
+                    {
+
+                    },
+                 "type":"help",
+                 "visible":true,
+                 "width":64,
+                 "x":1408,
+                 "y":448
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
