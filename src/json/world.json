@@ -825,8 +825,8 @@
                  "type":"hero",
                  "visible":true,
                  "width":32,
-                 "x":11328,
-                 "y":448
+                 "x":0,
+                 "y":512
                 }, 
                 {
                  "gid":28,
